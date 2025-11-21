@@ -18,7 +18,7 @@ export default function TopBar({ section, lastUpdated, commander = 'Cmdr. Pedrog
   })
 
   return (
-    <header className="sticky top-0 z-50 bg-background-sidebar/95 border-b border-slate-800/80 backdrop-blur-glass">
+    <header className="sticky top-0 z-50 bg-background-sidebar/95 border-b border-slate-800/80 backdrop-blur-glass shadow-sm">
       <div className="container-content">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">

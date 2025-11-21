@@ -50,7 +50,7 @@ export default function BRBandGraph({ title = 'BR Band Focus', className = '' }:
       )}
       <div className="space-y-4">
         {bands.map((band, index) => (
-          <div key={index} className="space-y-2">
+          <div key={`band-${index}-${band.range}`} className="space-y-2">
             <div className="flex justify-between items-center text-xs">
               <div>
                 <span className="text-slate-300 font-semibold">{band.label}</span>

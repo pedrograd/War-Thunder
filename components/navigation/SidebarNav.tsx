@@ -43,7 +43,7 @@ export default function SidebarNav({ sections, mobileMenuOpen = false, onClose }
         fixed lg:static w-72 flex-shrink-0 bg-background-sidebar border-r border-slate-800/80 flex flex-col h-full z-50 lg:z-20
         transform transition-transform duration-gentle ease-in-out
         ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-        backdrop-blur-glass
+        backdrop-blur-glass shadow-glass
       `}
     >
       {/* Header */}

@@ -66,7 +66,9 @@ npm run build
 npm start
 ```
 
-The application will be available at `http://localhost:3000`
+The application will be available at `http://localhost:3004` (port 3004)
+
+**Note**: The dev server runs on port 3004, not the default 3000.
 
 ## 📖 Available Pages
 
@@ -160,66 +162,36 @@ See `prd.md` for complete Product Requirements Document with detailed specificat
 - **Layout**: Max 1200px container, 65ch content width
 - **Responsive**: Mobile-first, breakpoints at 640px, 768px, 1024px
 
-## 🚀 Deploy to Vercel (Free & Easy - Get Shareable URL)
+## 🚀 Deployment
 
-**Your code is already on GitHub!** Follow these simple steps to get a public URL you can share with friends:
+### Quick Deploy to Vercel
 
-### Quick Deploy (2 minutes)
+See **[DEPLOY.md](./DEPLOY.md)** for detailed deployment instructions.
 
-1. **Go to Vercel**: Open [https://vercel.com](https://vercel.com) in your browser
-2. **Sign in**: Click "Sign Up" or "Log In" and use your **GitHub account** (same account as your repo)
-3. **New Project**: Click **"Add New..."** → **"Project"** (or "New Project" button)
-4. **Import Repository**: 
-   - Find and select: **`pedrograd/War-Thunder`**
-   - Or search for "War-Thunder" in the list
-5. **Configure** (Vercel auto-detects Next.js, but verify):
-   - **Framework Preset**: `Next.js` ✅
-   - **Build Command**: `npm run build` ✅
-   - **Output Directory**: `.next` ✅ (leave default)
-   - **Install Command**: `npm install` ✅ (leave default)
-6. **Deploy**: Click the big **"Deploy"** button
-7. **Wait**: Takes about 1-2 minutes for the build to complete
+**Quick Steps:**
+1. Push code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click "Add New..." → "Project" → Import your repository
+4. Click "Deploy" (Vercel auto-detects Next.js settings)
+5. Get your public URL: `https://your-project.vercel.app`
 
-### 🎉 Get Your Shareable URL
+**Prerequisites:**
+- Node.js 18+ (Vercel uses Node 18 by default)
+- No environment variables required
+- Build command: `npm run build`
 
-After deployment succeeds, Vercel will show you:
+For detailed troubleshooting and advanced configuration, see [DEPLOY.md](./DEPLOY.md).
 
-- **Production URL**: `https://war-thunder.vercel.app` (or similar)
-  - **This is your public website URL!** 
-  - Share this link with anyone - it works immediately
-  - No login required for visitors
+### Local Production Build Test
 
-### Auto-Deployments
-
-- Every time you push code to the `main` branch on GitHub, Vercel automatically redeploys your site
-- You'll get a new deployment URL for each push (but the production URL stays the same)
-
-### Current Status
-
-✅ **Code is on GitHub**: `https://github.com/pedrograd/War-Thunder`  
-✅ **Build verified**: `npm run build` passes successfully  
-✅ **Ready to deploy**: Just follow the steps above!
-
-### Environment Variables
-
-**No environment variables are required** for this project. The application works out of the box without any secrets or API keys.
-
-### Custom Domain (Optional)
-
-1. In Vercel dashboard, go to your project → **Settings** → **Domains**
-2. Add your custom domain
-3. Follow Vercel's DNS configuration instructions
-
-### Build Verification
-
-To verify your build works locally before deploying:
+Before deploying, test the production build locally:
 
 ```bash
 npm run build
 npm start
 ```
 
-Visit `http://localhost:3000` to test the production build locally.
+Visit `http://localhost:3004` to verify everything works.
 
 ## 📝 License
 

@@ -78,7 +78,7 @@ export default function MetaCard({
       {stats && stats.length > 0 && (
         <div className="space-y-2.5 mt-4 pt-4 border-t border-slate-700/40">
           {stats.map((stat, index) => (
-            <div key={index} className="flex justify-between items-center text-xs">
+            <div key={`stat-${index}-${stat.label}`} className="flex justify-between items-center text-xs">
               <span className="text-text-muted font-medium font-hud">{stat.label}</span>
               <span className={`font-mono font-semibold ${style.accent}`}>{stat.value}</span>
             </div>

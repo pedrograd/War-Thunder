@@ -9,6 +9,7 @@ import TableOfContents from '@/components/content/TableOfContents'
 import BackToTop from '@/components/content/BackToTop'
 import RelatedContent from '@/components/content/RelatedContent'
 import Breadcrumbs from '@/components/navigation/Breadcrumbs'
+import ComingSoon from '@/components/ui/ComingSoon'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
@@ -46,11 +47,11 @@ export default async function MetaPage({ params }: { params: { slug?: string[] }
             ))}
           </InfoGrid>
         ) : (
-          <div className="text-center py-12 mt-8">
-            <p className="text-slate-300 text-lg">
-              Meta guides are coming soon. Check back later!
-            </p>
-          </div>
+          <ComingSoon 
+            title="Meta Hub - Coming Soon"
+            description="Meta analysis and insights are currently being developed. Check back soon for comprehensive meta guides."
+            category="meta"
+          />
         )}
       </>
     )

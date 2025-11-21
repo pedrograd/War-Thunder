@@ -31,10 +31,10 @@ export default function Dashboard() {
           <p className="text-text-secondary text-lg mb-6">
             Status: <span className="text-accent-economy font-bold">SPEARHEAD UPDATE LIVE</span> | {formattedDate}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {briefingData.metaHighlights.map((highlight, index) => (
               <Card
-                key={index}
+                key={`highlight-${index}-${highlight.title}`}
                 variant="glass"
                 padding="md"
                 accent={

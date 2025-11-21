@@ -11,7 +11,7 @@ export default function PredictionsChart() {
       </div>
       <div className="bg-background-elevated rounded-b-xl shadow-lg border border-slate-700/60 p-8 space-y-8">
         {briefingData.predictions.map((item, index) => (
-          <div key={index}>
+          <div key={`prediction-${index}-${item.name}`}>
             <div className="flex justify-between mb-1">
               <span className="text-base font-bold text-slate-200">{item.name}</span>
               <span className="text-sm font-medium text-slate-400">{item.eta}</span>
@@ -38,7 +38,7 @@ export default function PredictionsChart() {
           <h3 className="font-bold text-slate-200 mb-4">Developer Roadmap Prediction</h3>
           <div className="flex flex-col md:flex-row gap-4 text-sm">
             {briefingData.roadmap.map((item, index) => (
-              <div key={index} className="flex-1 p-4 bg-slate-800/50 border border-slate-700/60 rounded">
+              <div key={`roadmap-${index}-${item.period}`} className="flex-1 p-4 bg-slate-800/50 border border-slate-700/60 rounded">
                 <strong className="block text-slate-100 mb-1">{item.period}</strong>
                 <p className="text-slate-300">{item.description}</p>
               </div>

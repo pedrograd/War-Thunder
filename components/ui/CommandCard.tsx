@@ -80,7 +80,7 @@ export default function CommandCard({
         <div className="space-y-1.5 mt-4 pt-4 border-t border-slate-700/40">
           {stats.map((stat, index) => (
             <div
-              key={index}
+              key={`stat-${index}-${stat.substring(0, 20)}`}
               className="text-xs text-slate-400 font-mono flex items-center gap-2 code-font"
             >
               <span className={`w-1 h-1 rounded-full ${style.accent} bg-current`} />

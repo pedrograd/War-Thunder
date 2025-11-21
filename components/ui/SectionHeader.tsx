@@ -22,19 +22,19 @@ export default function SectionHeader({
   }
 
   return (
-    <header className={`${className} mb-8 md:mb-12 animate-fade-in-up`}>
+    <header className={`${className} mb-10 md:mb-14 animate-fade-in-up`}>
       {eyebrow && (
-        <div className={`eyebrow ${accentColors[accent]} mb-3 flex items-center gap-2`}>
-          <span className="w-8 h-px bg-current opacity-50"></span>
+        <div className={`eyebrow ${accentColors[accent]} mb-4 flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity duration-smooth`}>
+          <span className="w-10 h-px bg-current opacity-60"></span>
           {eyebrow}
           <span className="flex-1 h-px bg-current opacity-20"></span>
         </div>
       )}
-      <h1 className={`text-4xl md:text-5xl font-bold text-text-primary mb-4 stencil-title ${accentColors[accent]}`}>
+      <h1 className={`text-4xl md:text-5xl font-bold text-text-primary mb-6 stencil-title ${accentColors[accent]} leading-tight`}>
         {title}
       </h1>
       {description && (
-        <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-3xl">
+        <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-3xl mt-2">
           {description}
         </p>
       )}

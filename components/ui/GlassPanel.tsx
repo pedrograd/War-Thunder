@@ -40,8 +40,8 @@ export default function GlassPanel({
     none: '',
   }
 
-  const hoverClass = hover ? 'card-hover cursor-pointer' : ''
-
+  const hoverClass = hover ? 'card-hover cursor-pointer transition-all duration-smooth' : 'transition-all duration-smooth'
+  
   return (
     <div 
       className={`

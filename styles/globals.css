@@ -27,6 +27,7 @@
   
   html {
     @apply bg-background-void;
+    scroll-behavior: smooth;
   }
   
   body {
@@ -243,28 +244,45 @@
   }
   
   .prose-tactical h2 {
-    @apply text-text-primary font-semibold border-b border-slate-700/60 pb-3 mt-10 mb-5 text-3xl;
+    @apply text-text-primary font-semibold border-b border-slate-700/60 pb-3 mt-12 mb-6 text-3xl;
     font-family: var(--font-stencil);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    scroll-margin-top: 6rem;
+    position: relative;
+  }
+  
+  .prose-tactical h2::before {
+    content: '';
+    @apply absolute -left-6 top-1/2 -translate-y-1/2 w-1 h-8 bg-accent-academy opacity-0 transition-opacity duration-smooth;
+  }
+  
+  .prose-tactical h2:hover::before {
+    @apply opacity-100;
   }
   
   .prose-tactical h3 {
-    @apply text-text-primary font-semibold mt-8 mb-4 text-2xl;
+    @apply text-text-primary font-semibold mt-10 mb-5 text-2xl;
     font-family: var(--font-hud);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    scroll-margin-top: 6rem;
   }
   
   .prose-tactical h4 {
-    @apply text-text-primary font-semibold mt-6 mb-3 text-xl;
+    @apply text-text-primary font-semibold mt-8 mb-4 text-xl;
     font-family: var(--font-hud);
     letter-spacing: 0.05em;
+    scroll-margin-top: 6rem;
   }
   
   .prose-tactical p {
-    @apply text-text-primary leading-reading mb-5;
+    @apply text-text-primary leading-reading mb-6;
     max-width: 75ch;
+  }
+  
+  .prose-tactical p + p {
+    @apply mt-4;
   }
   
   .prose-tactical a {
@@ -291,18 +309,28 @@
   }
   
   .prose-tactical blockquote {
-    @apply border-l-4 border-accent-warning/50 bg-background-elevated/50 pl-5 py-3 italic text-text-secondary my-5;
+    @apply border-l-4 border-accent-warning/50 bg-background-elevated/50 pl-5 py-4 italic text-text-secondary my-6;
     @apply rounded-r-lg;
+    @apply transition-all duration-smooth;
+  }
+  
+  .prose-tactical blockquote:hover {
+    @apply border-accent-warning/70 bg-background-elevated/60;
   }
   
   .prose-tactical ul,
   .prose-tactical ol {
-    @apply mb-5 ml-6 space-y-2;
+    @apply mb-6 ml-6 space-y-3;
     max-width: 70ch;
   }
   
   .prose-tactical li {
     @apply text-text-primary leading-relaxed;
+    @apply transition-colors duration-micro;
+  }
+  
+  .prose-tactical li:hover {
+    @apply text-text-primary;
   }
   
   .prose-tactical ul li {
@@ -314,8 +342,13 @@
   }
   
   .prose-tactical table {
-    @apply w-full border-collapse border border-slate-700/60 my-6 rounded-lg overflow-hidden;
+    @apply w-full border-collapse border border-slate-700/60 my-8 rounded-lg overflow-hidden;
     @apply shadow-glass;
+    @apply transition-shadow duration-smooth;
+  }
+  
+  .prose-tactical table:hover {
+    @apply shadow-glass-lg;
   }
   
   .prose-tactical th {

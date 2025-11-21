@@ -26,7 +26,7 @@ export default function MetaTrendChart({ title = 'Meta Health Trends', className
       )}
       <div className="space-y-4">
         {trends.map((trend, index) => (
-          <div key={index} className="space-y-1.5">
+          <div key={`trend-${index}-${trend.label}`} className="space-y-1.5">
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-400 font-medium">{trend.label}</span>
               <span className="text-slate-300 font-mono">{trend.status}</span>

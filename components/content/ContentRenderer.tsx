@@ -89,22 +89,22 @@ export default function ContentRenderer({ content, className = '' }: ContentRend
   // Inline code (before other inline markdown)
   html = html.replace(/`([^`]+)`/gim, '<code class="px-1.5 py-0.5 bg-background-elevated rounded text-sm font-mono">$1</code>')
   
-  // Headers - Add IDs for TOC navigation
+  // Headers - Add IDs for TOC navigation with anchor links
   html = html.replace(/^#### (.*$)/gim, (match, text) => {
     const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
-    return `<h4 id="${id}" class="text-xl font-semibold mt-6 mb-3 scroll-mt-24">${text}</h4>`
+    return `<h4 id="${id}" class="group text-xl font-semibold mt-8 mb-4 scroll-mt-24 flex items-center gap-2"><a href="#${id}" class="opacity-0 group-hover:opacity-100 transition-opacity duration-micro text-accent-academy no-underline" aria-label="Link to ${text}"><i class="fa-solid fa-link text-xs"></i></a>${text}</h4>`
   })
   html = html.replace(/^### (.*$)/gim, (match, text) => {
     const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
-    return `<h3 id="${id}" class="text-2xl font-semibold mt-6 mb-3 scroll-mt-24">${text}</h3>`
+    return `<h3 id="${id}" class="group text-2xl font-semibold mt-10 mb-5 scroll-mt-24 flex items-center gap-2"><a href="#${id}" class="opacity-0 group-hover:opacity-100 transition-opacity duration-micro text-accent-academy no-underline" aria-label="Link to ${text}"><i class="fa-solid fa-link text-sm"></i></a>${text}</h3>`
   })
   html = html.replace(/^## (.*$)/gim, (match, text) => {
     const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
-    return `<h2 id="${id}" class="text-3xl font-semibold mt-6 mb-4 scroll-mt-24">${text}</h2>`
+    return `<h2 id="${id}" class="group text-3xl font-semibold mt-12 mb-6 scroll-mt-24 flex items-center gap-2 border-b border-slate-700/60 pb-3"><a href="#${id}" class="opacity-0 group-hover:opacity-100 transition-opacity duration-micro text-accent-academy no-underline" aria-label="Link to ${text}"><i class="fa-solid fa-link"></i></a>${text}</h2>`
   })
   html = html.replace(/^# (.*$)/gim, (match, text) => {
     const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
-    return `<h1 id="${id}" class="text-4xl font-bold mt-8 mb-4 scroll-mt-24">${text}</h1>`
+    return `<h1 id="${id}" class="group text-4xl font-bold mt-8 mb-6 scroll-mt-24 flex items-center gap-3"><a href="#${id}" class="opacity-0 group-hover:opacity-100 transition-opacity duration-micro text-accent-academy no-underline" aria-label="Link to ${text}"><i class="fa-solid fa-link"></i></a>${text}</h1>`
   })
   
   // Links

@@ -19,7 +19,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
           </Link>
         </li>
         {items.map((item, index) => (
-          <li key={index} className="flex items-center">
+          <li key={`breadcrumb-${index}-${item.label}`} className="flex items-center">
             <span className="mx-2 text-text-muted">/</span>
             {item.href && index < items.length - 1 ? (
               <Link 

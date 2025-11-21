@@ -37,7 +37,7 @@ export default function Card({
     none: '',
   }
 
-  const hoverClass = hover ? 'card-hover' : ''
+  const hoverClass = hover ? 'card-hover transition-all duration-smooth' : 'transition-all duration-smooth'
   
   return (
     <div className={`

@@ -28,9 +28,9 @@ export default function ReadingProgress() {
   if (progress === 0) return null
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-1 bg-background-surface z-50">
+    <div className="fixed top-0 left-0 right-0 h-0.5 bg-background-surface/50 z-50 backdrop-blur-sm">
       <div
-        className="h-full bg-primary transition-all duration-150"
+        className="h-full bg-accent-primary transition-all duration-300 ease-out shadow-neon-orange"
         style={{ width: `${progress}%` }}
       />
     </div>

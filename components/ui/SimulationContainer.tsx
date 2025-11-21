@@ -26,7 +26,7 @@ export default function SimulationContainer({
       {steps.length > 0 && (
         <div className="sim-timeline">
           {steps.map((step, index) => (
-            <div key={index}>[ {step} ]</div>
+            <div key={`step-${index}-${step.substring(0, 10)}`}>[ {step} ]</div>
           ))}
         </div>
       )}
