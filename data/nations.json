@@ -1,0 +1,24 @@
+[
+  {
+    "nation": "USA",
+    "doctrine": "Versatile combined arms with excellent CAS support and stabilized guns at low BRs",
+    "recommendedLineups": ["3.7 M4 Sherman lineup", "5.7 Jumbo + CAS", "10.0 Abrams meta"],
+    "metaRank": 1,
+    "flag": "🇺🇸"
+  },
+  {
+    "nation": "Germany",
+    "doctrine": "Superior firepower and armor at mid-tiers. Excellent long-range capabilities.",
+    "recommendedLineups": ["5.3 Tiger H1", "6.7 King Tiger", "11.0 Leopard 2A6"],
+    "metaRank": 2,
+    "flag": "🇩🇪"
+  },
+  {
+    "nation": "USSR",
+    "doctrine": "Heavy armor and powerful guns. Excellent brawling capabilities at all tiers.",
+    "recommendedLineups": ["4.3 T-34-57", "7.3 IS-6", "11.0 T-80BVM"],
+    "metaRank": 3,
+    "flag": "🇷🇺"
+  }
+]
+

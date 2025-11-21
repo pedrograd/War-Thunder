@@ -20,33 +20,24 @@ You can think of it as: **"Specs + Prompts + Playbook + History"**, all in one p
 
 2. **Learn How to Use AI Assistance**:
    - Read Section 11 (Meta-Orchestrator Agent Instructions) to understand how to control the automation
-
    - Skim Section 3 (Prompt Library & Agent Playbook) to see available prompts
 
 3. **Get Started**:
    - Run `python3 auto_master.py init` to initialize the system
-
    - Run `python3 auto_master.py status` to see current state
    - Use `python3 auto_master.py grow` to expand the PRD, or let the AI drive (see Section 11)
 
-
 4. **Deep Dive** (when needed):
-
    - Section 20: Developer Experience, Onboarding & Education (this guide)
    - Section 12: Evaluation & Benchmarks (how to verify the system works)
-
    - Section 13: Governance & Contribution (how to extend the template)
    - Sections 15-19: Domain Packs, Deployment, Security, Performance, Analytics
 
-
 **Returning to This Project?**
 
-
 1. Run `python3 auto_master.py doctor` to check system health
-
 2. Run `python3 auto_master.py status` to see current state
 3. Read Section 10 (Progress Log) to see what's been done
-
 4. Continue with `python3 auto_master.py grow` or use Meta-Orchestrator commands
 
 ## 0.2 Quick Start for AI Agents
@@ -55,156 +46,94 @@ You can think of it as: **"Specs + Prompts + Playbook + History"**, all in one p
 
 1. **Read First**:
    - Section 11: META-ORCHESTRATOR AGENT INSTRUCTIONS (complete prompt)
-
    - Section 4: Phases, Tasks & Progress (how work is structured)
    - Section 5: Implementation & Engineering Notes (how code generation works)
 
-
 2. **Respect Constraints**:
-
    - Section 13: Governance (what you can and cannot modify)
    - Section 17: Security, Privacy, Compliance (data handling rules)
-
    - Section 18: Performance (cost and speed considerations)
    - Section 19: Analytics (data collection guidelines)
 
-
 3. **Critical Rules**:
-
    - **NEVER delete or truncate `prd.md`** - it is the single source of truth
    - Only **append** or **refine** content carefully
-
    - Never store secrets or PII in `prd.md` or logs
    - Use `auto_master.py` commands, don't reimplement them
 
-
 4. **When in Doubt**:
-
    - Run `python3 auto_master.py doctor` to diagnose issues
    - Check `auto_master.log` for detailed error messages
-
    - Read Section 20 (DX & Onboarding) for common workflows
 
 **Acting as Code Assistant?**
 
-
 1. Read Section 5 (Implementation & Engineering Notes) for code generation patterns
 2. Read Section 2 (Omni-Corp Role Library) to understand available expert roles
-
-
 3. Use implementation commands: `plan_impl`, `impl_phase`, `impl_loop`
 4. Respect `auto_config.json.implementation` settings
 
-
-
 ## 0.3 Document Structure Overview
-
-
 
 This document is organized into major sections:
 
-
-
 **Core Project Content (Sections 1-9)**:
-
-
 - Section 1: Vision, Strategy & Business
 - Section 2: Omni-Corp Master Role Library
-
-
 - Section 3: Prompt Library & Agent Playbook
 - Section 4: Phases, Tasks & Progress
-
 - Section 5: Implementation & Engineering Notes
 - Section 6: AI, Data & Analytics
-
 - Section 7: Design, UX & Content
 - Section 8: Prompt Library & Agent Playbook (detailed)
-
-
 - Section 9: Tasks, Backlog & Roadmap
 
 **System & Automation (Sections 10-11)**:
 - Section 10: Progress Log & Phase History
-
-
 - Section 11: META-ORCHESTRATOR AGENT INSTRUCTIONS
-
 
 **Template & Meta Features (Sections 12-20)**:
 - Section 12: Evaluation, Smoke Tests & Benchmarks
-
-
 - Section 13: Open-Source Governance & Contribution Guide
 - Section 14: App Factory Mode & Multi-Project Usage
-
-
 - Section 15: Domain Packs & Presets
 - Section 16: Deployment, Environments & Runtime Monitoring
-
-
 - Section 17: Security, Privacy, Compliance & Testing
 - Section 18: Performance, Cost & Resource Optimization
-
-
 - Section 19: Analytics, Telemetry, User Feedback & Continuous Learning
 - Section 20: Developer Experience, Onboarding & Education
 
-
-
 **How to Navigate**:
-
-
 - Use section markers (`<!-- SECTION_START/END -->`) to find specific content
 - Search for keywords or phase IDs to find relevant sections
-
-
-
 - Use table of contents (if generated) or section headers
-
 
 ## 0.4 Key Concepts
 
 **Single Master Document**:
 - Everything lives in `prd.md` - no scattered docs
-
-
-
 - This file grows from ~2,000 lines to 100,000+ lines through automation
-
 - All content is version-controlled and searchable
 
-
 **Phase-Based Growth**:
-
-
 - Work is organized into phases (e.g., Phase 3.2.1)
 - Each phase can be enhanced, implemented, or tracked independently
-
 - Phases are tracked in Section 4 and Section 10
 
 **Role-Based Enhancement**:
 - AI agents act as expert personas from Section 2
-
-
-
 - Each enhancement uses appropriate roles for the content
 - Roles ensure consistent, expert-level output
-
 
 **Implementation Tracks**:
 - Code generation is organized into tracks (Client, Backend, AI, Infra, etc.)
 - Each track can be implemented independently
-
-
-
 - Tracks are mapped to phases in Section 5
 
 **Automation Safety**:
 - System never deletes `prd.md`
 - State is tracked in `.auto_state.json` (can be rebuilt)
 - All changes are logged in `auto_master.log`
-
 - Git integration (optional) provides version control
 
 ---
@@ -221,59 +150,41 @@ A: Core automation files: `prd.md`, `auto_master.py`, `auto_config.json`, `auto_
 A: Use `python3 auto_master.py --help` to see all commands. Start with `init`, then `status`, then `grow`.
 
 **Q: How do I let the AI drive everything?**
-
 A: Open the repo in your AI IDE, copy the Meta-Orchestrator prompt from Section 11, paste it into a chat, describe your app, and type `start`.
-
 
 **Q: What if something breaks?**
 A: Run `python3 auto_master.py doctor` to diagnose. Check `auto_master.log` for details. See Section 20 for debugging workflows.
 
 **Q: Can I customize this template?**
-
 A: Yes! See Section 13 (Governance) for extension patterns. Project-specific content goes in Sections 1-9. Core automation files should be modified carefully.
-
-
-
 
 ---
 
 **Next Steps**: Read Section 20 (Developer Experience, Onboarding & Education) for detailed workflows and FAQs.
-
 
 ---
 
 # 0. PROJECT META & CONTROL
 
 <!--
-
 AUTOMATION SYSTEM NOTES:
-
-
 ========================
 This document is managed by an automated PRD enhancement system.
 
 CRITICAL RULES FOR AI AGENTS:
 - DO NOT delete information; only enhance, refactor, and append.
-
-
 - All enhancements happen via small phases; each phase has an ID like `Phase 3.2.1`.
-
 - This document may grow to 100,000+ lines through automated expansion.
 - When enhancing, preserve all existing content and add detail/clarity.
-
 - Label new assumptions, open questions, and risks clearly.
 - Use phase IDs to track which sections have been processed.
 -->
 
-
-
 ## Project Name
 **WAR THUNDER MASTER ACADEMY**
 
-
 ## Project Description
 A comprehensive, production-grade educational platform for War Thunder players. The platform serves as both a military-style academy with deep, multi-chapter training modules and a complete War Thunder meta encyclopedia. It provides accurate, evidence-based mechanics knowledge covering nations, BR tiers, maps, vehicle guides, meta shifts, weapons systems, weak spots, economy strategies, premium vehicle analysis, future tech predictions, and new player progression paths. The platform features a professional, dark, tactical UI/UX designed for long-form educational content consumption.
-
 
 ## Project Tags
 - Type: web
@@ -281,11 +192,6 @@ A comprehensive, production-grade educational platform for War Thunder players. 
 - Category: education / gaming / reference
 
 ## Automation Metadata
-
-
-
-
-
 - Created: [Date will be set by automation]
 - Last Enhanced: [Date will be updated by automation]
 - Total Phases Completed: 0
@@ -293,138 +199,59 @@ A comprehensive, production-grade educational platform for War Thunder players. 
 
 ---
 
-
-
-
-
-
 # 1. VISION, STRATEGY & BUSINESS
 
 <!--
 TODO: Expand each subsection with detailed analysis.
 Future phases will enhance this section using Omni-Corp roles (CEO, Product Strategy, etc.).
-
-
-
 -->
 
 ## 1.1 Mission & Vision
 
 ### Mission
-
-To become the definitive, evidence-based educational resource for War Thunder players of all skill levels, providing comprehensive training modules and meta knowledge that elevates player understanding and performance. We serve as both a military-style academy with deep, multi-chapter training modules and a complete War Thunder meta encyclopedia, delivering accurate, ToS-compliant mechanics knowledge that empowers players to master the game through structured learning and tactical doctrine.
-
+To become the definitive, evidence-based educational resource for War Thunder players of all skill levels, providing comprehensive training modules and meta knowledge that elevates player understanding and performance.
 
 ### Vision
 Establish WAR THUNDER MASTER ACADEMY as the premier destination for:
-
-- **Military-style academy training**: Long-form, multi-chapter modules that progressively build expertise from fundamentals to advanced competitive tactics
-
-
-- **Complete meta encyclopedia**: Accurate, evidence-based mechanics and meta analysis covering all BR tiers, nations, vehicles, maps, and game systems
-
-- **Comprehensive knowledge base**: Nations, BR tiers, maps, vehicles, weapons, weak spots, economy, premium analysis, future tech predictions, and new player progression paths
-
-- **Stable, expandable platform**: Never lose content; sustainable architecture that grows with the community through version-controlled, file-based content system
-
-- **Tactical doctrine mastery**: Teach principles that apply across situations, not just specific vehicles—energy fighting theory, BR meta science, map mastery, and counter-strategy analysis
+- **Military-style academy training**: Long-form, multi-chapter modules that progressively build expertise
+- **Complete meta encyclopedia**: Accurate, evidence-based mechanics and meta analysis
+- **Comprehensive knowledge base**: Nations, BR tiers, maps, vehicles, weapons, weak spots, economy, premium analysis
+- **Stable, expandable platform**: Never lose content; sustainable architecture that grows with the community
 
 ## 1.2 Target Users
-
-
-
 
 ### Primary User: New to Intermediate War Thunder Player
 - **Demographics**: Ages 16-35, primarily PC gamers
 - **Psychographics**: Competitive, knowledge-seeking, strategic thinkers
-
 - **Goals**: Improve performance, understand game mechanics, progress efficiently
 - **Pain Points**: Scattered information, outdated guides, difficulty finding accurate meta knowledge
-
-
-
 - **Behaviors**: Seeks structured learning, values evidence-based content, prefers long-form educational material
 
 ### Secondary User: Advanced/Experienced Player
 - **Goals**: Stay current with meta shifts, optimize lineups, understand new updates
-
 - **Pain Points**: Meta changes rapidly, need consolidated information on new vehicles/maps
 - **Behaviors**: Uses as reference manual, seeks specific vehicle/map data, follows BR tier meta
 
-
-
-
-
 ### Tertiary User: Content Creator / Community Educator
 - **Goals**: Access authoritative reference material, verify mechanics for content creation
-
 - **Behaviors**: References platform for accuracy checks, shares modules with community
-
 
 ## 1.3 Value Proposition
 
-
-
 ### Unique Value
-1. **File-Based Content System**: All War Thunder knowledge stored as Markdown/MDX in version-controlled `/content` directory—NEVER loses content. Content survives platform evolution, is easily maintainable, and scales infinitely.
-2. **Evidence-Based Knowledge**: ToS-compliant, accurate mechanics analysis (no cheats, exploits, or banned tools). All claims backed by verifiable data, testing, and evidence. Focus on legitimate strategies, tactics, and game mechanics.
-
-3. **Structured Military Academy Approach**: Long-form training modules with progressive difficulty and comprehensive coverage. Modules build from fundamentals to advanced tactics, teaching principles that apply across situations.
-4. **Complete Meta Coverage**: Single destination for nations, BR tiers, maps, vehicles, weapons, weak spots, economy, premium analysis, future tech predictions, and new player progression paths. Everything in one place, cross-linked and organized.
-
-5. **Professional Tactical UI/UX**: Dark, military-themed interface optimized for long reading sessions. Professional, authoritative appearance with tactical aesthetic that respects player intelligence.
-
-6. **Knowledge Graph**: Intelligent cross-linking between related content (nations → vehicles → maps → meta). Progressive learning paths, context-aware suggestions, and understanding of how concepts connect.
-
-
-### War Thunder Educational Philosophy
-
-
-#### Energy Fighting Theory (Air Combat)
-- **Core Principle**: Energy is the fundamental currency of air combat. Understanding energy states (potential, kinetic, total) and energy management is essential for air superiority.
-- **Application**: Teach energy fighting from basics (energy states, energy retention) to advanced (energy traps, energy advantage exploitation).
-
-- **Evidence-Based**: All energy fighting concepts backed by physics, game mechanics testing, and in-game verification.
-
-#### BR Meta Science (Ground & Air)
-- **Core Principle**: Battle Rating (BR) determines matchmaking and vehicle balance. Understanding BR tier meta, vehicle clustering, and BR-specific strategies is crucial for success.
-- **Application**: Comprehensive BR tier analysis, vehicle rankings per BR tier, meta shifts tracking, and BR-specific tactical doctrine.
-- **Evidence-Based**: Meta analysis based on community data, win rates, vehicle popularity, and update impact analysis.
-
-#### Tactical Doctrine Approach
-- **Core Principle**: Teach principles and doctrine that apply across situations, not just specific vehicle guides. Build tactical thinking that adapts to any situation.
-
-- **Application**: Doctrine-based modules (positioning doctrine, weak spot doctrine, map mastery doctrine) that teach universal principles.
-
-
-- **Evidence-Based**: All tactical principles backed by testing, analysis, and verifiable results.
-
-
-#### Map Mastery System
-- **Core Principle**: Map knowledge is as important as vehicle knowledge. Understanding spawn-to-spawn tactics, key positions, and map-specific strategies is essential.
-- **Application**: Comprehensive map coverage with spawn analysis, positioning guides, route visualizations, and nation-specific map strategies.
-- **Evidence-Based**: Map tactics based on spawn analysis, position testing, and meta-aware map analysis.
-
-#### Counter-Strategy Analysis
-
-- **Core Principle**: Not just "how to use X" but "how to counter X". Understanding both sides of every engagement is crucial for tactical mastery.
-- **Application**: Every vehicle guide includes counter-strategies. Every tactic includes counter-tactics. Every meta analysis includes counter-meta strategies.
-
-- **Evidence-Based**: Counter-strategies based on vehicle analysis, tactical testing, and meta understanding.
+1. **File-Based Content System**: All War Thunder knowledge stored as Markdown/MDX in version-controlled `/content` directory—NEVER loses content
+2. **Evidence-Based Knowledge**: ToS-compliant, accurate mechanics analysis (no cheats, exploits, or banned tools)
+3. **Structured Military Academy Approach**: Long-form training modules with progressive difficulty and comprehensive coverage
+4. **Complete Meta Coverage**: Single destination for nations, BR tiers, maps, vehicles, weapons, weak spots, economy, premium analysis
+5. **Professional Tactical UI/UX**: Dark, military-themed interface optimized for long reading sessions
+6. **Knowledge Graph**: Intelligent cross-linking between related content (nations → vehicles → maps → meta)
 
 ### Why Users Choose This
-- **No content loss**: File-based system ensures stability and version control. Content never disappears, is always accessible, and is easily maintainable.
-- **Comprehensive**: Everything in one place, structured and organized. Single destination for all War Thunder knowledge needs.
-- **Accurate**: Evidence-based, ToS-compliant knowledge. All claims backed by verifiable data and testing.
-- **Progressive**: Academy modules build from fundamentals to advanced tactics. Structured learning path that grows with player skill.
-- **Current**: Meta analysis stays updated with game changes. Content versioning and update tracking ensure accuracy.
-
-
-- **Tactical Depth**: Not just vehicle stats, but deep tactical analysis, doctrine, and strategic thinking.
-
-
-
-- **Professional Quality**: Military-style structured learning with professional UI/UX that respects player intelligence.
+- **No content loss**: File-based system ensures stability and version control
+- **Comprehensive**: Everything in one place, structured and organized
+- **Accurate**: Evidence-based, ToS-compliant knowledge
+- **Progressive**: Academy modules build from fundamentals to advanced tactics
+- **Current**: Meta analysis stays updated with game changes
 
 ## 1.4 Market & Competition
 
@@ -436,8 +263,6 @@ Establish WAR THUNDER MASTER ACADEMY as the premier destination for:
 ### Competitive Landscape
 - **Official War Thunder Wiki**: Good for basic vehicle stats, but lacks strategic depth
 - **Community Forums (Reddit, Official Forums)**: Fragmented, hard to navigate, often outdated
-
-
 - **YouTube Guides**: Video format not ideal for reference, hard to update, searchability limited
 - **Third-Party Wikis**: Often incomplete, maintenance issues, no structured learning path
 
@@ -445,11 +270,7 @@ Establish WAR THUNDER MASTER ACADEMY as the premier destination for:
 1. **Structured Academy Format**: Multi-chapter training modules vs. scattered guides
 2. **File-Based Stability**: Never lose content vs. wiki maintenance issues
 3. **Evidence-Based Focus**: Accurate mechanics analysis vs. speculation
-
-
-
 4. **Complete Integration**: Single platform for all knowledge vs. fragmented sources
-
 5. **Professional UI/UX**: Tactical, military-style design vs. generic wiki appearance
 
 ## 1.5 Monetization & Business Model
@@ -458,37 +279,25 @@ Establish WAR THUNDER MASTER ACADEMY as the premier destination for:
 **Phase 1 (Launch - Free)**
 - Free access to all content
 - Community-driven expansion
-
-
-
 - Build user base and establish authority
 
 **Phase 2 (Future Consideration)**
 - Premium academy modules (advanced tactics, BR-specific deep dives)
-
 - Optional donations/subscriptions (support platform development)
 - **Note**: Monetization not prioritized in initial build; focus on content quality and stability
 
 ### Business Sustainability
 - **Cost Structure**: Minimal (static site hosting, domain)
-
-
-
 - **Scalability**: File-based content system scales infinitely
-
 - **Maintenance**: Community contributions, structured content updates
-
 - **Longevity**: Version-controlled content ensures platform survives long-term
 
 ---
-
 
 <!-- OMNI_CORP_ROLE_LIBRARY_START -->
 # 2. OMNI-CORP MASTER ROLE LIBRARY
 
 The Omni-Corp Master Role Library provides a comprehensive set of AI personas with specialized expertise. Each role is designed to work universally across any digital product type (mobile apps, web apps, games, AI tools, backend services, etc.). Roles use generalized, reusable actions rather than project-specific references.
-
-
 
 ## 2.1 Role Categories
 
@@ -500,7 +309,6 @@ These roles focus on high-level vision, strategy, and product direction. They co
 
 These roles handle the technical architecture, implementation, and engineering practices. They translate product requirements into robust, scalable systems. They collaborate across the stack to ensure code quality, performance, and maintainability.
 
-
 ### Design & Creative
 
 These roles focus on user experience, visual design, and creative content. They ensure the product is intuitive, beautiful, and engaging. They work closely with product and engineering to create cohesive user experiences.
@@ -510,10 +318,6 @@ These roles focus on user experience, visual design, and creative content. They 
 These roles specialize in AI, machine learning, data science, and analytics. They build intelligent features, analyze user behavior, and provide data-driven insights. They collaborate with product and engineering to integrate AI capabilities and measure success.
 
 ### Operations & Infrastructure
-
-
-
-
 
 These roles ensure the product runs reliably, securely, and at scale. They handle deployment, monitoring, security, and compliance. They work with engineering to build robust infrastructure and operational processes.
 
@@ -525,8 +329,6 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 ## 2.2 Role Definitions
 
-
-
 ### Chief Technology Officer (CTO)
 
 **Act as:** A senior technology executive responsible for technical strategy, architecture decisions, and engineering excellence across the entire organization.
@@ -535,46 +337,53 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 **Universal Responsibilities:**
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.775531 -->
+> [LOCAL-STUB] Phase P8.0002 (lines 124-243) – No Cursor driver. Echoing original chunk for testing.
 
 1. Analyze the overall system architecture and all relevant technical artifacts for scalability, maintainability, and alignment with product goals.
 2. Identify technical risks, constraints, and trade-offs across the entire technology stack and propose mitigation strategies.
 
-
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.768409 -->
+> [LOCAL-STUB] Phase P7.0002 (lines 125-244) – No Cursor driver. Echoing original chunk for testing.
 
 3. Define technical standards, best practices, and engineering culture that ensure high-quality, sustainable development.
 4. Evaluate technology choices (frameworks, platforms, tools) and make recommendations based on project requirements, team capabilities, and long-term vision.
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.761281 -->
+> [LOCAL-STUB] Phase P6.0002 (lines 125-244) – No Cursor driver. Echoing original chunk for testing.
 
 5. Guide architectural decisions and ensure consistency across different components and services.
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.754512 -->
+> [LOCAL-STUB] Phase P5.0002 (lines 124-243) – No Cursor driver. Echoing original chunk for testing.
 
 ---
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.747684 -->
+> [LOCAL-STUB] Phase P4.0002 (lines 124-243) – No Cursor driver. Echoing original chunk for testing.
+
 ### Chief Product Officer (CPO) / Product Lead
 
-
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.741128 -->
+> [LOCAL-STUB] Phase P3.0002 (lines 124-243) – No Cursor driver. Echoing original chunk for testing.
 
 **Act as:** A senior product executive responsible for product strategy, roadmap, and ensuring the product delivers value to users and the business.
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.734336 -->
+> [LOCAL-STUB] Phase P2.0002 (lines 124-243) – No Cursor driver. Echoing original chunk for testing.
+
 **Core Function:** Define what to build, why it matters, and how success will be measured. Bridge the gap between user needs, business goals, and technical capabilities.
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.728501 -->
+> [LOCAL-STUB] Phase P1.0002 (lines 124-243) – No Cursor driver. Echoing original chunk for testing.
 
 **Universal Responsibilities:**
 
-
-
 1. Analyze user needs, market opportunities, and competitive landscape to define product vision and strategy.
-
-
 2. Prioritize features and initiatives based on user value, business impact, and technical feasibility.
 3. Define success metrics and key performance indicators (KPIs) that measure product success.
 4. Create detailed product requirements, user stories, and acceptance criteria that guide development.
 5. Identify risks, assumptions, and dependencies that could impact product delivery or success.
-
-
 
 ---
 
@@ -582,36 +391,25 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 **Act as:** A senior producer responsible for coordinating game development, managing scope, timeline, and quality across all disciplines.
 
-
 **Core Function:** Ensure the game/experience is delivered on time, within scope, and meets quality standards. Coordinate between design, engineering, art, and other disciplines.
-
 
 **Universal Responsibilities:**
 
-
-
-
-
 1. Analyze project scope, timeline, and resource requirements to create realistic development plans.
 2. Identify dependencies, bottlenecks, and risks that could impact delivery and propose mitigation strategies.
-
 3. Coordinate between different disciplines (design, engineering, art, audio) to ensure cohesive execution.
 4. Define quality standards and ensure all deliverables meet those standards before release.
 5. Manage stakeholder communication and ensure alignment on priorities and expectations.
 
 ---
 
-
 ### Principal Software Architect
 
 **Act as:** A senior technical architect responsible for designing system architecture, technical patterns, and ensuring technical excellence.
 
-
 **Core Function:** Design scalable, maintainable system architectures that support current and future product requirements. Provide technical leadership and guidance to engineering teams.
 
-
 **Universal Responsibilities:**
-
 
 1. Analyze system requirements and design high-level architectures that balance scalability, performance, and maintainability.
 2. Define architectural patterns, design principles, and technical standards that guide implementation.
@@ -621,19 +419,13 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 ---
 
-
 ### Senior Mobile Developer
 
-
-
 **Act as:** A senior mobile engineer specializing in native or cross-platform mobile development (iOS, Android, or both).
-
-
 
 **Core Function:** Build high-quality mobile applications that deliver excellent user experiences while respecting platform conventions and constraints.
 
 **Universal Responsibilities:**
-
 
 1. Analyze mobile-specific requirements (platform capabilities, performance, battery, network) and design solutions that work within these constraints.
 2. Implement mobile features following platform best practices, design patterns, and performance guidelines.
@@ -641,10 +433,7 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 4. Optimize mobile performance (startup time, memory usage, battery consumption) and ensure smooth user experience.
 5. Design mobile architecture patterns (navigation, state management, data persistence) that scale with app complexity.
 
-
 ---
-
-
 
 ### Full-Stack Web Developer
 
@@ -654,18 +443,11 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 **Universal Responsibilities:**
 
-
 1. Analyze web application requirements and design full-stack solutions that balance user experience with backend scalability.
 2. Implement frontend features using modern frameworks and ensure responsive, accessible, and performant user interfaces.
 3. Design and implement backend APIs, services, and data models that support frontend requirements.
-
 4. Identify web-specific risks (browser compatibility, security vulnerabilities, performance) and propose mitigation strategies.
 5. Optimize web performance (load times, rendering, API response times) and ensure excellent user experience across devices.
-
-
-
-
-
 
 ---
 
@@ -673,18 +455,14 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 **Act as:** A senior game programmer specializing in gameplay systems, mechanics, and player-facing features.
 
-
 **Core Function:** Implement engaging gameplay mechanics, systems, and features that create compelling player experiences.
 
 **Universal Responsibilities:**
 
-
 1. Analyze gameplay requirements and design systems (combat, progression, economy, social) that create engaging player experiences.
 
-
-
-
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.776925 -->
+> [LOCAL-STUB] Phase P8.0003 (lines 248-367) – No Cursor driver. Echoing original chunk for testing.
 
 2. Implement gameplay mechanics following game design principles, ensuring they feel responsive and balanced.
 3. Identify gameplay risks (balance issues, exploitability, player frustration) and propose solutions.
@@ -693,59 +471,61 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 ---
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.769077 -->
+> [LOCAL-STUB] Phase P7.0003 (lines 249-368) – No Cursor driver. Echoing original chunk for testing.
 
 
 ### UI/UX Lead Designer
 
 **Act as:** A senior designer responsible for user experience and interface design across the entire product.
 
-
-
-
-
 **Core Function:** Create intuitive, beautiful, and accessible user experiences that delight users and achieve product goals.
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.761835 -->
+> [LOCAL-STUB] Phase P6.0003 (lines 249-368) – No Cursor driver. Echoing original chunk for testing.
 
 
 **Universal Responsibilities:**
 
 1. Analyze user needs, behaviors, and pain points to design user experiences that solve real problems.
-
-
 2. Create user flows, wireframes, and prototypes that communicate design intent and validate concepts.
 
-3. Design visual interfaces that are consistent, accessible, and aligned with brand identity.
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.755114 -->
+> [LOCAL-STUB] Phase P5.0003 (lines 248-367) – No Cursor driver. Echoing original chunk for testing.
 
+3. Design visual interfaces that are consistent, accessible, and aligned with brand identity.
 4. Identify UX risks (usability issues, accessibility barriers, user confusion) and propose solutions.
 5. Collaborate with engineering to ensure designs are implemented accurately and perform well.
 
-
-
 ---
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.748308 -->
+> [LOCAL-STUB] Phase P4.0003 (lines 248-367) – No Cursor driver. Echoing original chunk for testing.
 
 
 ### Level Designer (for game-like experiences / flows)
 
 **Act as:** A senior designer specializing in creating engaging levels, spaces, or user flow experiences.
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.741752 -->
+> [LOCAL-STUB] Phase P3.0003 (lines 247-366) – No Cursor driver. Echoing original chunk for testing.
 
 **Core Function:** Design levels, spaces, or user journeys that guide users through engaging, well-paced experiences.
 
 **Universal Responsibilities:**
 
-
-
 1. Analyze level/flow requirements and design experiences that balance challenge, exploration, and narrative.
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.734954 -->
+> [LOCAL-STUB] Phase P2.0003 (lines 248-367) – No Cursor driver. Echoing original chunk for testing.
 
 2. Create level layouts, flow diagrams, and pacing guides that ensure engaging user experiences.
-
 3. Identify design risks (difficulty spikes, confusing navigation, pacing issues) and propose solutions.
 4. Iterate on designs based on playtesting, user feedback, and analytics to optimize the experience.
 5. Document design intent, player goals, and key interactions to guide implementation.
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.729167 -->
+> [LOCAL-STUB] Phase P1.0003 (lines 247-366) – No Cursor driver. Echoing original chunk for testing.
 
 ---
 
@@ -753,18 +533,13 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 **Act as:** A senior artist-technician who bridges art and engineering, ensuring visual assets are optimized and integrated efficiently.
 
-
-
-
 **Core Function:** Optimize visual assets, create tools and pipelines, and ensure art assets integrate smoothly with the technical implementation.
 
 **Universal Responsibilities:**
 
-
 1. Analyze visual requirements and technical constraints to design asset pipelines and optimization strategies.
 2. Create tools, scripts, and workflows that streamline asset creation and integration.
 3. Optimize visual assets (textures, models, animations) for performance while maintaining quality.
-
 4. Identify technical art risks (performance bottlenecks, asset bloat, pipeline inefficiencies) and propose solutions.
 5. Collaborate with artists and engineers to ensure visual assets are created efficiently and integrated correctly.
 
@@ -774,14 +549,11 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 **Act as:** A senior audio professional responsible for all sound design, music, and audio implementation.
 
-
 **Core Function:** Create immersive audio experiences that enhance the product and support the user experience.
-
 
 **Universal Responsibilities:**
 
 1. Analyze audio requirements and design sound systems that enhance the user experience and support product goals.
-
 2. Create sound effects, music, and voice-over that align with the product's tone and brand.
 3. Implement audio systems (spatial audio, dynamic mixing, adaptive music) that respond to user actions and context.
 4. Identify audio risks (file size, performance impact, accessibility) and propose solutions.
@@ -789,42 +561,33 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 ---
 
-
-
-
 ### AI/ML Engineer
 
 **Act as:** A senior engineer specializing in artificial intelligence and machine learning, building intelligent features and systems.
 
 **Core Function:** Design and implement AI/ML features that enhance the product with intelligent capabilities (recommendations, predictions, automation, etc.).
 
-
-
-
-
 **Universal Responsibilities:**
-
 
 1. Analyze AI/ML requirements and design systems that leverage machine learning to solve user problems.
 2. Implement ML models, training pipelines, and inference systems that integrate with the product.
 3. Identify AI/ML risks (model accuracy, bias, data quality, computational costs) and propose mitigation strategies.
 4. Optimize ML systems for performance, accuracy, and cost-effectiveness.
-
 5. Design ML architecture patterns (feature engineering, model serving, A/B testing) that support iteration and improvement.
 
-
 ---
-
 
 ### Data Scientist & Analyst
 
 **Act as:** A senior data professional responsible for analyzing user behavior, product metrics, and business data.
 
-
 **Core Function:** Extract insights from data to inform product decisions, measure success, and identify opportunities.
 
-
 **Universal Responsibilities:**
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.777604 -->
+> [LOCAL-STUB] Phase P8.0004 (lines 372-491) – No Cursor driver. Echoing original chunk for testing.
+
 
 1. Analyze product data (user behavior, engagement, business metrics) to identify trends, patterns, and opportunities.
 2. Design experiments, A/B tests, and analytics implementations that measure product success.
@@ -836,31 +599,34 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 ### DevOps & Cloud Architect
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.769802 -->
+> [LOCAL-STUB] Phase P7.0004 (lines 373-492) – No Cursor driver. Echoing original chunk for testing.
 
 
 **Act as:** A senior operations engineer responsible for deployment, infrastructure, and operational excellence.
-
 
 **Core Function:** Design and maintain infrastructure that enables reliable, scalable, and efficient product deployment and operation.
 
 **Universal Responsibilities:**
 
 1. Analyze infrastructure requirements and design cloud architectures that support scalability, reliability, and cost efficiency.
-
 2. Implement CI/CD pipelines, deployment automation, and infrastructure-as-code that streamline operations.
 3. Design monitoring, alerting, and observability systems that ensure system health and rapid incident response.
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.762563 -->
+> [LOCAL-STUB] Phase P6.0004 (lines 373-492) – No Cursor driver. Echoing original chunk for testing.
+
 4. Identify infrastructure risks (scalability limits, single points of failure, security vulnerabilities) and propose solutions.
 5. Optimize infrastructure for cost, performance, and reliability while maintaining operational simplicity.
-
 
 ---
 
 ### Cybersecurity / Application Security Engineer
 
-
 **Act as:** A senior security engineer responsible for ensuring the product is secure, compliant, and protects user data.
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.756266 -->
+> [LOCAL-STUB] Phase P5.0004 (lines 371-490) – No Cursor driver. Echoing original chunk for testing.
 
 **Core Function:** Identify security risks, design secure systems, and ensure the product meets security and compliance requirements.
 
@@ -872,18 +638,20 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 4. Identify security risks (vulnerabilities, data breaches, compliance gaps) and propose mitigation strategies.
 5. Create security policies, procedures, and documentation that guide secure development practices.
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.748863 -->
+> [LOCAL-STUB] Phase P4.0004 (lines 372-491) – No Cursor driver. Echoing original chunk for testing.
 
 
 ---
-
-
 
 ### Technology Lawyer / Compliance Officer
 
 **Act as:** A legal and compliance professional specializing in technology law, privacy, and regulatory compliance.
 
 **Core Function:** Ensure the product complies with relevant laws, regulations, and industry standards (GDPR, CCPA, COPPA, etc.).
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.742358 -->
+> [LOCAL-STUB] Phase P3.0004 (lines 371-490) – No Cursor driver. Echoing original chunk for testing.
 
 
 **Universal Responsibilities:**
@@ -892,38 +660,31 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 2. Design privacy policies, terms of service, and data handling procedures that comply with regulations.
 3. Identify compliance risks (regulatory violations, privacy breaches, legal liability) and propose mitigation strategies.
 4. Review product features, data collection, and user agreements for legal and compliance issues.
-
 5. Create compliance documentation, procedures, and training that ensure ongoing adherence to requirements.
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.735573 -->
+> [LOCAL-STUB] Phase P2.0004 (lines 371-490) – No Cursor driver. Echoing original chunk for testing.
 
 ---
-
-
 
 ### Growth / Marketing Lead
 
 **Act as:** A senior growth professional responsible for user acquisition, engagement, and retention.
 
-
-
 **Core Function:** Design and execute growth strategies that acquire, engage, and retain users while optimizing for business metrics.
 
-
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.729799 -->
+> [LOCAL-STUB] Phase P1.0004 (lines 370-489) – No Cursor driver. Echoing original chunk for testing.
 
 **Universal Responsibilities:**
 
 1. Analyze market opportunities, user segments, and competitive landscape to design growth strategies.
-
 2. Design and execute marketing campaigns, user acquisition channels, and engagement initiatives.
-
-
 3. Optimize user onboarding, conversion funnels, and retention strategies based on data and experimentation.
 4. Identify growth risks (acquisition costs, churn, market saturation) and propose solutions.
 5. Measure and report on growth metrics (acquisition, activation, retention, revenue) to inform strategy.
 
-
 ---
-
 
 ### Customer Success & Community Manager
 
@@ -935,7 +696,6 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 
 1. Analyze user needs, feedback, and support patterns to identify opportunities to improve user success.
 2. Design support processes, documentation, and self-service resources that help users succeed.
-
 3. Build and manage user communities (forums, Discord, social media) that foster engagement and knowledge sharing.
 4. Identify user success risks (support bottlenecks, user confusion, churn) and propose solutions.
 5. Measure and report on user satisfaction, support metrics, and community health to inform improvements.
@@ -943,13 +703,13 @@ These roles focus on user acquisition, engagement, and satisfaction. They build 
 ---
 <!-- OMNI_CORP_ROLE_LIBRARY_END -->
 
-
 ---
-
 
 <!-- Enhanced by automation system at 2025-11-19T22:28:08.734140 -->
 # 3. PRODUCT REQUIREMENTS DOCUMENT (PRD CORE)
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.778223 -->
+> [LOCAL-STUB] Phase P8.0005 (lines 495-614) – No Cursor driver. Echoing original chunk for testing.
 
 <!--
 This is the core PRD section. Future automation will expand each subsection
@@ -957,1305 +717,34 @@ with detailed requirements, user stories, acceptance criteria, etc.
 -->
 
 ## 3.1 Users & Personas
-
-
-### Primary User Persona: New to Intermediate War Thunder Player
-
-**Name**: "Alex the Learner"
-**Demographics**: 
-- Age: 16-35
-- Location: Global (primarily North America, Europe, Asia)
-- Platform: Primarily PC, some console players
-
-- Gaming Experience: Moderate to high gaming experience, new to War Thunder or < 500 hours
-
-
-**Psychographics**:
-- Competitive mindset: Wants to improve and win
-- Knowledge-seeking: Actively searches for guides and tutorials
-- Strategic thinkers: Values understanding game mechanics and tactics
-- Time-conscious: Wants efficient learning paths
-
-- Community-oriented: Engages with War Thunder community
-
-**Goals**:
-- Improve performance and win rate
-- Understand game mechanics deeply (armor, penetration, energy fighting)
-- Progress efficiently through tech trees
-
-
-- Master specific vehicle types or nations
-- Learn from mistakes and avoid common pitfalls
-- Build effective lineups for different BR tiers
-
-**Pain Points**:
-
-- Information is scattered across multiple sources (YouTube, Reddit, Wiki)
-- Guides are often outdated or contradictory
-- Difficulty finding accurate, evidence-based information
-
-- No structured learning path—don't know where to start
-- Overwhelmed by game complexity (BR tiers, vehicle types, mechanics)
-- Hard to find specific information quickly (weak spots, map tactics, meta)
-
-
-**Behaviors**:
-
-- Searches for guides before playing new vehicles
-- Watches YouTube tutorials but prefers text for reference
-- Reads Reddit discussions but finds them fragmented
-- Values structured, progressive learning
-
-- Prefers evidence-based content over speculation
-
-- Returns to reference material during gameplay
-
-- Shares useful guides with friends/clan
-
-**Content Consumption Patterns**:
-- Starts with New Player Path module
-
-- Progresses through Academy modules chapter by chapter
-- References vehicle guides when researching new vehicles
-
-- Checks map guides before playing specific maps
-- Monitors meta hub for BR tier updates
-- Uses search functionality frequently
-
-
-**Success Metrics**:
-- Completes New Player Path (8 chapters)
-- Completes at least 60% of one Academy module
-- Returns to platform weekly
-- Shares content with others
-- Shows improved in-game performance
-
-
----
-
-### Secondary User Persona: Advanced/Experienced Player
-
-
-**Name**: "Sam the Strategist"
-**Demographics**:
-- Age: 20-40
-- Location: Global
-
-- Platform: Primarily PC
-
-- Gaming Experience: 1000+ hours in War Thunder, multiple nations researched
-
-
-**Psychographics**:
-
-
-- Competitive: Plays ranked/competitive modes
-- Meta-focused: Stays current with meta shifts
-- Optimization-oriented: Seeks optimal lineups and strategies
-- Efficiency-minded: Wants to maximize performance
-- Detail-oriented: Values deep, technical analysis
-
-**Goals**:
-- Stay current with meta shifts and updates
-
-- Optimize lineups for specific BR tiers
-- Understand new vehicles and their impact on meta
-- Master advanced tactics and competitive strategies
-
-
-- Find specific, detailed information quickly
-
-- Analyze meta trends and predict shifts
-
-
-**Pain Points**:
-- Meta changes rapidly with updates
-- Need consolidated information on new vehicles/maps
-- Hard to find comprehensive meta analysis
-- Existing guides lack depth for advanced players
-- Need quick access to specific technical details
-- Want historical meta tracking and trends
-
-**Behaviors**:
-- Uses platform as reference manual
-
-- Checks meta hub regularly for updates
-- Reads vehicle guides for new vehicles
-
-- Analyzes BR tier meta charts
-
-- References map guides for competitive play
-- Shares meta insights with clan/community
-
-
-**Content Consumption Patterns**:
-
-- Primarily uses Meta Hub and Vehicle Encyclopedia
-- References specific vehicle guides when needed
-- Checks map guides for competitive maps
-- Monitors Future Tech for upcoming vehicles
-- Uses search for specific technical queries
-
-- Skims Academy modules for advanced tactics
-
-
-**Success Metrics**:
-- Visits platform weekly
-- Uses meta hub regularly
-- References vehicle guides for new vehicles
-
-- Shares meta insights with community
-- Shows engagement with advanced content
-
----
-
-### Tertiary User Persona: Content Creator / Community Educator
-
-**Name**: "Casey the Creator"
-
-**Demographics**:
-- Age: 18-35
-- Location: Global
-- Platform: PC
-- Role: YouTube creator, Twitch streamer, community guide writer
-
-
-
-**Psychographics**:
-- Authority-seeking: Wants to provide accurate information
-- Quality-focused: Values evidence-based content
-- Community-oriented: Serves War Thunder community
-- Efficiency-minded: Needs quick access to accurate information
-
-- Professional: Maintains credibility through accuracy
-
-**Goals**:
-- Access authoritative reference material
-
-- Verify mechanics for content creation
-- Find comprehensive information quickly
-- Ensure content accuracy and credibility
-- Stay current with meta and updates
-- Provide value to community through accurate guides
-
-**Pain Points**:
-- Need to verify information accuracy
-- Hard to find comprehensive, authoritative sources
-- Time-consuming to research multiple sources
-- Risk of sharing outdated or incorrect information
-- Need quick access to technical details
-- Want to cite authoritative sources
-
-
-**Behaviors**:
-- References platform for accuracy checks
-
-- Uses as primary research source
-
-- Shares modules with community
-
-
-- Cites platform in content
-
-- Checks meta hub for current information
-- Uses vehicle guides for video research
-
-**Content Consumption Patterns**:
-
-
-- Uses all modules as reference
-- Primarily uses Vehicle Encyclopedia and Meta Hub
-- References Academy modules for educational content
-- Checks Future Tech for upcoming content
-- Uses search extensively for research
-
-- Shares platform links in content
-
-
-**Success Metrics**:
-- References platform in content
-- Shares platform with audience
-- Uses platform as primary research source
-- Shows engagement with all content types
-- Contributes to platform growth through sharing
+[To be expanded: Detailed user personas with goals, pain points, behaviors.]
 
 ## 3.2 Use Cases & Scenarios
-
-### Primary Use Cases
-
-#### Use Case 1: New Player Onboarding
-**Actor**: New War Thunder player (< 50 hours)
-
-
-**Goal**: Learn the basics and get started successfully
-**Preconditions**: Player has installed War Thunder, completed tutorial
-**Main Flow**:
-1. Player visits platform homepage
-2. Player clicks "New Player Path" module
-3. Player reads overview and starts Chapter 1
-
-4. Player progresses through chapters sequentially
-5. Player applies concepts in-game between chapters
-6. Player completes New Player Path (8 chapters)
-
-7. Player transitions to Academy modules or Nation Guides
-
-**Success Criteria**:
-- Player completes New Player Path
-
-
-- Player understands basic game mechanics
-- Player can play first matches successfully
-- Player knows which nation to choose
-
-**Related Modules**: New Player Path, Academy (Ground/Air), Nation Guides
-
----
-
-#### Use Case 2: Vehicle Research & Guide
-**Actor**: Any player researching a specific vehicle
-**Goal**: Understand vehicle strengths, weaknesses, and playstyle
-**Preconditions**: Player knows vehicle name or is browsing vehicles
-**Main Flow**:
-
-
-1. Player searches for vehicle (e.g., "T-72B3") or browses Vehicle Encyclopedia
-2. Player finds vehicle guide page
-
-3. Player reads vehicle overview, stats, and characteristics
-4. Player reviews weak spot diagram and armor analysis
-
-5. Player reads playstyle guide and recommended lineups
-6. Player checks map-specific strategies
-7. Player reviews comparison with similar vehicles
-8. Player follows cross-links to related content (maps, meta, weapons)
-
-
-
-**Success Criteria**:
-- Player understands vehicle capabilities
-
-- Player knows weak spots and how to aim
-- Player understands optimal playstyle
-- Player can build effective lineup
-
-**Related Modules**: Vehicle Encyclopedia, Weakspot Library, Weapons & Systems, Maps, Meta Hub
-
----
-
-#### Use Case 3: Map Tactical Research
-**Actor**: Player preparing for specific map
-**Goal**: Learn optimal positioning, routes, and strategies for map
-**Preconditions**: Player knows map name or is browsing maps
-**Main Flow**:
-1. Player searches for map (e.g., "Fulda Gap") or browses Map Tactics
-2. Player finds map guide page
-3. Player reads map overview and key features
-4. Player reviews spawn analysis and immediate routes
-
-
-5. Player studies key positions and positioning diagrams
-
-
-
-6. Player reads vehicle-specific strategies (MBT, light tank, TD, SPAA)
-7. Player reviews nation-specific recommendations
-8. Player checks BR tier-specific tactics
-9. Player follows cross-links to recommended vehicles and meta
-
-**Success Criteria**:
-- Player understands map layout and key positions
-- Player knows optimal routes from spawn
-- Player understands vehicle-specific strategies
-- Player can apply tactics in-game
-
-**Related Modules**: Map Tactics, Vehicle Encyclopedia, Nation Guides, Meta Hub
-
----
-
-
-#### Use Case 4: Meta Analysis & BR Tier Research
-**Actor**: Advanced player or competitive player
-**Goal**: Understand current meta, optimal lineups, and BR tier balance
-**Preconditions**: Player knows BR tier or wants meta overview
-**Main Flow**:
-1. Player visits Meta Hub or searches for BR tier (e.g., "BR 10.7")
-2. Player finds meta analysis page
-3. Player reviews vehicle rankings and tier list
-4. Player reads OP vehicle analysis and counters
-5. Player studies nation dominance analysis
-6. Player reviews recommended lineups per nation
-
-7. Player checks update impact analysis
-
-8. Player follows cross-links to vehicle guides and maps
-
-**Success Criteria**:
-- Player understands current meta
-- Player knows which vehicles are strong/weak
-- Player can build optimal lineups
-
-
-- Player understands meta shifts and trends
-
-**Related Modules**: Meta Hub, Vehicle Encyclopedia, Nation Guides, Future Tech
-
----
-
-#### Use Case 5: Academy Module Learning
-**Actor**: Player wanting structured learning
-**Goal**: Master specific aspect of gameplay (ground, air, etc.)
-
-**Preconditions**: Player has basic game knowledge
-
-**Main Flow**:
-1. Player visits Academy hub or specific module (e.g., Ground Forces)
-
-2. Player reads module overview and chapter list
-3. Player starts with Chapter 1
-
-4. Player reads chapter content and completes practice drills
-5. Player applies concepts in-game
-6. Player progresses to next chapter
-7. Player completes module (all chapters)
-8. Player follows cross-links to related content
-
-**Success Criteria**:
-- Player completes module chapters
-
-- Player understands core concepts
-- Player can apply tactics in-game
-- Player shows improved performance
-
-**Related Modules**: Academy modules, Vehicle Encyclopedia, Maps, Meta Hub
-
----
-
-#### Use Case 6: Nation Guide & Lineup Building
-
-
-
-**Actor**: Player choosing or optimizing nation
-**Goal**: Understand nation characteristics and build effective lineups
-**Preconditions**: Player is researching nations or building lineups
-
-**Main Flow**:
-1. Player visits Nation Guides or searches for nation (e.g., "USA")
-2. Player reads nation overview and characteristics
-3. Player reviews vehicle progression tree analysis
-4. Player studies BR tier lineup recommendations
-5. Player reads playstyle guide
-6. Player reviews strengths and weaknesses
-7. Player checks map-specific strategies
-
-
-8. Player follows cross-links to vehicle guides and meta
-
-**Success Criteria**:
-- Player understands nation characteristics
-- Player knows optimal lineups per BR tier
-- Player understands nation playstyle
-- Player can make informed nation choice
-
-**Related Modules**: Nation Guides, Vehicle Encyclopedia, Maps, Meta Hub, Economy Lab
-
----
-
-#### Use Case 7: Premium Vehicle Research
-**Actor**: Player considering premium vehicle purchase
-**Goal**: Evaluate premium vehicle value and make informed purchase decision
-**Preconditions**: Player is considering premium purchase
-**Main Flow**:
-1. Player visits Premium Tier Lists or searches for premium vehicle
-2. Player finds premium vehicle analysis
-3. Player reads value assessment and performance analysis
-
-4. Player reviews grinding efficiency rating
-
-
-5. Player checks recommended use cases
-6. Player compares with tech tree equivalents
-7. Player reads purchase recommendation
-
-8. Player follows cross-links to vehicle guide and meta
-
-**Success Criteria**:
-- Player understands premium vehicle value
-- Player knows if purchase is worth it
-- Player understands optimal use cases
-- Player can make informed purchase decision
-
-**Related Modules**: Premium Tier Lists, Vehicle Encyclopedia, Economy Lab, Meta Hub
-
-
-
-
----
-
-#### Use Case 8: Weapon & System Research
-**Actor**: Player wanting to understand weapon mechanics
-
-
-**Goal**: Understand weapon types, mechanics, and effectiveness
-**Preconditions**: Player wants to learn about weapons
-**Main Flow**:
-1. Player visits Weapons & Systems or searches for weapon type (e.g., "APFSDS")
-2. Player finds weapon guide page
-3. Player reads weapon mechanics and characteristics
-4. Player reviews penetration data and effectiveness
-5. Player studies usage strategies and tips
-6. Player checks comparison with other weapon types
-
-7. Player follows cross-links to vehicle guides
-
-**Success Criteria**:
-- Player understands weapon mechanics
-
-- Player knows when to use weapon type
-- Player understands effectiveness and limitations
-- Player can apply knowledge in-game
-
-
-**Related Modules**: Weapons & Systems, Vehicle Encyclopedia, Academy modules
-
----
-
-### User Journey: Complete New Player Experience
-
-**Journey**: New Player → Successful First Matches → Nation Choice → Vehicle Progression
-
-1. **Discovery**: Player finds platform through search or community recommendation
-2. **Onboarding**: Player starts New Player Path, reads overview
-3. **Learning**: Player progresses through New Player Path chapters (1-8)
-4. **Application**: Player applies concepts in first matches
-5. **Nation Choice**: Player uses Nation Guides to choose nation
-6. **Vehicle Research**: Player researches starting vehicles using Vehicle Encyclopedia
-
-7. **Map Learning**: Player learns map tactics for common maps
-
-8. **Progression**: Player continues learning through Academy modules
-9. **Optimization**: Player uses Meta Hub and Economy Lab to optimize progression
-10. **Mastery**: Player becomes advanced user, uses platform as reference
-
-
-**Success Metrics**:
-- Player completes New Player Path
-
-- Player makes informed nation choice
-- Player shows improved performance
-- Player returns to platform regularly
-- Player progresses through Academy modules
-
----
-
-
-### Edge Cases & Special Scenarios
-
-#### Edge Case 1: Outdated Content
-**Scenario**: Player finds content that seems outdated after game update
-
-**Handling**: 
-- Content shows version number and last updated date
-- Outdated content marked clearly
-- Update process tracks game patches
-- Users can report outdated content
-
-#### Edge Case 2: Missing Vehicle/Map
-**Scenario**: Player searches for vehicle or map not yet covered
-**Handling**:
-- Search shows "not found" with suggestions
-- Platform shows coverage status
-- Users can request content additions
-- Content expansion roadmap visible
-
-#### Edge Case 3: Conflicting Information
-
-**Scenario**: Player finds conflicting information between sources
-**Handling**:
-
-- Platform prioritizes evidence-based content
-- Sources cited for claims
-- Version tracking shows content evolution
-- Community feedback incorporated
-
-
-
-
-#### Edge Case 4: Mobile User Experience
-**Scenario**: Player accesses platform on mobile device
-**Handling**:
-
-- Responsive design ensures mobile usability
-
-
-- Touch-friendly navigation
-- Optimized reading experience
-- Mobile search functionality
-
-#### Edge Case 5: Low Bandwidth
-**Scenario**: Player has slow internet connection
-**Handling**:
-- Static site generation ensures fast loading
-- Optimized images and assets
-
-- Progressive loading where possible
-- Offline capability (future)
+[To be expanded: Primary use cases, user journeys, edge cases.]
 
 ## 3.3 Features & Requirements
+[To be expanded: Feature list, functional requirements, feature priorities.]
 
-### Feature Categories
-
-Features are organized into the following categories:
-1. **Core Content Modules**: All educational and reference content modules
-2. **Navigation & Discovery**: Search, navigation, content discovery
-3. **Content Rendering**: Markdown/MDX rendering, diagrams, cross-linking
-4. **User Experience**: UI components, layouts, responsive design
-5. **Performance & Infrastructure**: Static generation, caching, optimization
-6. **SEO & Accessibility**: Search optimization, structured data, WCAG compliance
-7. **Future Features**: Interactive tools, user accounts, community features
-
-
----
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.770600 -->
+> [LOCAL-STUB] Phase P7.0005 (lines 496-615) – No Cursor driver. Echoing original chunk for testing.
 
 ### 3.3.1 Must-Have Features (MVP)
-
-**Priority**: Critical for platform launch. Must be implemented before public release.
-
-
-#### Core Content Modules
-
-**1. Dashboard / Briefing Page**
-- **Description**: Main landing page with navigation to all major modules
-
-
-- **Requirements**:
-  - Module cards for all major sections (Academy, Nations, Maps, Meta, etc.)
-  - Featured/updated content display
-  - Prominent search bar
-  - Quick links to popular resources
-  - Clean, professional, tactical aesthetic
-- **Acceptance Criteria**:
-  - All major modules accessible from dashboard
-  - Search bar visible and functional
-  - Module cards clearly labeled and clickable
-  - Responsive design works on mobile
-
-**2. New Player Path Module**
-- **Description**: Structured onboarding path for new players (8 chapters)
-- **Requirements**:
-  - Overview page with path structure
-  - 8 sequential chapters (First Steps, Choosing Nation, Ground Basics, Air Basics, First Matches, Progression, Economy Basics, Next Steps)
-  - Chapter navigation (prev/next)
-  - Progress tracking (localStorage)
-  - Cross-links to related content
-- **Acceptance Criteria**:
-  - All 8 chapters render correctly
-  - Navigation between chapters works
-  - Content is beginner-friendly
-
-  - Cross-links functional
-
-**3. Ground Academy Module**
-- **Description**: Comprehensive ground forces training (19 chapters)
-- **Requirements**:
-  - Module overview page
-  - 19 sequential chapters from fundamentals to competitive play
-  - Chapter navigation and progress tracking
-  - Practice drills and examples
-  - Cross-links to vehicles, maps, meta
-- **Acceptance Criteria**:
-
-
-  - All 19 chapters render correctly
-
-  - Navigation and progress tracking work
-
-  - Content is comprehensive and accurate
-  - Cross-links functional
-
-
-**4. Air Academy Module**
-- **Description**: Comprehensive air forces training (20 chapters)
-- **Requirements**:
-  - Module overview page
-  - 20 sequential chapters covering energy fighting, tactics, jet combat
-  - Chapter navigation and progress tracking
-
-  - Energy fighting theory and examples
-  - Cross-links to vehicles, maps, meta
-- **Acceptance Criteria**:
-  - All 20 chapters render correctly
-  - Energy fighting concepts clearly explained
-  - Navigation and progress tracking work
-  - Cross-links functional
-
-**5. Nation Guides Module**
-- **Description**: Comprehensive guides for all playable nations
-- **Requirements**:
-  - Nation index page
-  - Individual nation guide pages (USA, Germany, Russia, Britain, Japan, China, Italy, France, Sweden, Israel)
-  - Nation overview, characteristics, playstyle
-  - Vehicle progression analysis
-  - BR tier lineup recommendations
-  - Map-specific strategies
-- **Acceptance Criteria**:
-
-  - All 10 nation guides render correctly
-
-
-  - Content is comprehensive and accurate
-  - Lineup recommendations are practical
-  - Cross-links functional
-
-**6. Vehicle Encyclopedia Module**
-- **Description**: Comprehensive vehicle guides and analysis
-- **Requirements**:
-
-  - Vehicle index page (organized by nation)
-  - Individual vehicle guide pages (top 20+ vehicles initially)
-  - Vehicle stats tables (armor, armament, mobility)
-  - Weak spot diagrams (visual or ASCII)
-  - Playstyle guides
-
-
-  - Recommended lineups
-  - Map-specific strategies
-- **Acceptance Criteria**:
-  - Top 20+ vehicles have complete guides
-  - Weak spot diagrams are clear and accurate
-  - Stats are accurate and well-presented
-  - Cross-links functional
-
-**7. Map Tactics Module**
-
-- **Description**: Comprehensive map-specific tactical guides
-- **Requirements**:
-  - Map index page
-  - Individual map guide pages (5+ major maps initially)
-  - Map overview and key features
-  - Spawn analysis and routes
-  - Positioning diagrams
-  - Vehicle-specific strategies
-  - Nation-specific recommendations
-  - BR tier-specific tactics
-- **Acceptance Criteria**:
-  - 5+ major maps have complete guides
-  - Positioning diagrams are clear
-  - Strategies are practical and accurate
-
-  - Cross-links functional
-
-**8. Meta Hub Module**
-- **Description**: Central hub for meta analysis and BR tier charts
-- **Requirements**:
-  - Meta hub overview page
-
-  - BR tier analysis pages (3+ BR tier ranges initially)
-
-  - Vehicle rankings tables with tier ratings (S, A, B, C, D, F)
-  - OP vehicle analysis with counters
-  - Nation dominance analysis
-  - Recommended lineups per nation
-- **Acceptance Criteria**:
-  - 3+ BR tier ranges have analysis
-  - Rankings are accurate and well-presented
-
-
-  - Lineup recommendations are practical
-  - Cross-links functional
-
-
-#### Navigation & Discovery
-
-**9. Search Functionality**
-- **Description**: Client-side search across all content
-- **Requirements**:
-  - Search bar in header (prominent, accessible)
-  - Search index generated at build time
-
-  - Search results page with filtering
-  - Search highlights matching terms
-  - Search filters (category, nation, BR tier, etc.)
-- **Acceptance Criteria**:
-  - Search finds relevant content
-  - Results are accurate and ranked well
-  - Filters work correctly
-  - Search is fast (< 100ms)
-
-**10. Navigation System**
-- **Description**: Clear navigation throughout platform
-
-- **Requirements**:
-  - Header navigation with main sections
-  - Breadcrumb navigation on content pages
-  - Sidebar navigation (optional, for large pages)
-  - Footer with links
-  - Mobile-friendly navigation menu
-- **Acceptance Criteria**:
-
-  - All sections accessible via navigation
-  - Breadcrumbs show clear path
-  - Mobile navigation works well
-  - Navigation is intuitive
-
-
-#### Content Rendering
-
-**11. Markdown/MDX Content Rendering**
-- **Description**: Render markdown content with custom components
-- **Requirements**:
-  - Support standard markdown syntax
-
-  - Custom MDX components (tables, callouts, diagrams)
-
-  - Frontmatter processing
-  - Syntax highlighting for code blocks
-  - Table of contents generation
-- **Acceptance Criteria**:
-  - All markdown renders correctly
-
-  - Custom components work
-
-  - Frontmatter processed correctly
-  - TOC generated accurately
-
-**12. Cross-Linking System**
-- **Description**: Intelligent cross-linking between related content
-- **Requirements**:
-  - Automatic cross-link generation from frontmatter
-  - Related content suggestions
-  - Bidirectional linking where appropriate
-  - Context-aware link suggestions
-
-- **Acceptance Criteria**:
-  - Cross-links are relevant and accurate
-  - Related content suggestions are helpful
-  - Links work correctly
-
-  - Link context is clear
-
-#### User Experience
-
-**13. Dark Tactical Theme**
-- **Description**: Professional dark theme with tactical aesthetic
-- **Requirements**:
-  - Dark color palette (#0a0a0a background, #2563eb primary)
-  - Military/tactical visual style
-  - Optimized typography for long reading
-  - Consistent design system
-  - Responsive design (mobile-first)
-- **Acceptance Criteria**:
-
-  - Theme is consistent across all pages
-
-  - Colors meet contrast requirements (WCAG AA)
-  - Typography is readable and comfortable
-  - Mobile experience is excellent
-
-**14. Responsive Design**
-
-- **Description**: Works perfectly on all device sizes
-- **Requirements**:
-  - Mobile-first responsive design
-  - Breakpoints: 640px, 768px, 1024px
-
-  - Touch-friendly navigation and controls
-  - Optimized images and assets
-
-  - Fast loading on mobile networks
-- **Acceptance Criteria**:
-  - All pages work on mobile devices
-  - Navigation is touch-friendly
-  - Content is readable on small screens
-  - Performance is good on mobile
-
----
+[To be expanded]
 
 ### 3.3.2 Should-Have Features
-
-**Priority**: Important for user experience. Should be implemented in Alpha/Beta phases.
-
-#### Content Expansion
-
-**1. Complete Academy Coverage**
-
-- All Academy modules (Ground, Air, Heli, Naval)
-- All chapters for each module
-- Complete content depth
-
-**2. Complete Vehicle Coverage**
-- All top-tier vehicles (BR 10.0+)
-- Popular mid-tier vehicles
-- All vehicle types (MBT, light tank, TD, SPAA, etc.)
-
-**3. Complete Map Coverage**
-- All major maps (20+ maps)
-- Complete map guides with all required sections
-- Updated map tactics after game updates
-
-**4. Complete Meta Coverage**
-- All BR tier ranges analyzed
-- Update impact analysis
-
-- Historical meta tracking
-
-#### Enhanced Content Features
-
-**5. Interactive Diagrams**
-
-- SVG/React components for weak spot diagrams
-- Interactive armor layouts
-- Positioning diagrams with hover states
-- Route visualizations
-
-**6. Enhanced Search**
-
-
-- Server-side search (if needed for performance)
-- Advanced search filters
-- Search suggestions/autocomplete
-- Search history
-
-**7. Content Versioning Display**
-- Version history visible to users
-- Last updated dates prominent
-- Content changelog
-
-#### User Experience Enhancements
-
-**8. Progress Tracking**
-- User progress tracking (localStorage-based)
-- Completion badges/certificates
-- Progress dashboard
-
-**9. Bookmarking**
-- Save favorite articles (localStorage)
-- Reading list
-- Quick access to saved content
-
-**10. Table of Contents**
-- Auto-generated TOC for long articles
-- Sticky TOC sidebar
-- TOC navigation
-
----
+[To be expanded]
 
 ### 3.3.3 Nice-to-Have Features
-
-**Priority**: Enhancements that improve experience but not critical. Future phases.
-
-
-#### Interactive Tools
-
-**1. Vehicle Comparison Tool**
-- Side-by-side vehicle comparison
-- Filter and sort vehicles
-- Comparison charts
-
-**2. Lineup Builder Tool**
-- Interactive lineup builder
-- BR tier calculator
-- Lineup recommendations
-
-
-**3. Damage Model Calculator**
-- Penetration calculator
-- Damage calculation
-
-- Effectiveness analysis
-
-**4. Meta Tracker with Charts**
-- Historical meta charts
-- Meta shift visualization
-- Trend analysis
-
-#### Community Features
-
-**5. User Accounts**
-- User registration and authentication
-- User profiles
-- Progress syncing across devices
-
-**6. Comments/Discussion**
-- Comments on articles (moderated)
-- Discussion threads
-- Community Q&A
-
-**7. User Contributions**
-- Community content contributions
-- Moderation system
-- Contributor recognition
-
-#### Advanced Features
-
-**8. Predictive Meta Engine**
-- Meta prediction based on patterns
-- Update impact prediction
-- Trend forecasting
-
-**9. Advanced Analytics Dashboard**
-- Platform analytics
-- Content performance metrics
-
-- User engagement analytics
-
-
-**10. API for Third-Party Integrations**
-- Public API for vehicle/map data
-- API documentation
-- Rate limiting and authentication
+[To be expanded]
 
 ## 3.4 Non-Functional Requirements
-
-### Performance Requirements
-
-#### Page Load Performance
-- **Initial Page Load**: < 2 seconds on 3G connection
-- **Time to Interactive (TTI)**: < 3 seconds on 3G connection
-- **First Contentful Paint (FCP)**: < 1.5 seconds on 3G connection
-- **Largest Contentful Paint (LCP)**: < 2.5 seconds on 3G connection
-- **Cumulative Layout Shift (CLS)**: < 0.1 (minimal layout shifts)
-- **First Input Delay (FID)**: < 100ms (responsive interactions)
-
-#### Content Loading Performance
-- **Content Page Load**: < 1 second on 4G connection
-- **Search Results**: < 100ms (client-side search)
-- **Image Loading**: Lazy loading, optimized images (WebP format)
-- **Code Splitting**: Route-based code splitting for optimal bundle sizes
-
-#### Build Performance
-- **Build Time**: < 5 minutes for full site generation
-- **Static Generation**: All content pages pre-rendered at build time
-- **Incremental Builds**: Support for incremental static regeneration (future)
-
-#### Scalability Requirements
-
-- **Content Volume**: Support 10,000+ content files
-- **Search Index**: Client-side search index < 5MB
-- **Build Scalability**: Build time scales linearly with content volume
-- **Static Hosting**: Works with any static hosting provider (Vercel, Netlify, GitHub Pages)
-
-### Reliability Requirements
-
-#### Availability
-- **Uptime Target**: 99.9% (allows for scheduled maintenance)
-- **Error Rate**: < 0.1% of requests result in errors
-- **Graceful Degradation**: Site works without JavaScript (progressive enhancement)
-
-#### Error Handling
-- **404 Pages**: Custom 404 page with helpful navigation
-- **Error Pages**: Custom error pages with recovery options
-- **Content Errors**: Graceful handling of missing or corrupted content files
-- **Build Errors**: Clear error messages during build process
-
-
-#### Data Integrity
-- **Content Versioning**: All content files version-controlled in git
-- **Content Backup**: Git repository provides automatic backup
-- **Content Validation**: Validate markdown syntax and frontmatter during build
-- **Link Validation**: Validate internal links during build (optional)
-
-### Security Requirements
-
-
-#### Content Security
-- **No User-Generated Content**: All content is file-based, no user input
-
-
-- **XSS Prevention**: React/Next.js provides built-in XSS protection
-- **CSRF Protection**: Not applicable (static site, no forms)
-- **Content Security Policy**: Implement CSP headers (future)
-
-#### Data Privacy
-- **No Personal Data Collection**: Platform doesn't collect personal data
-- **No Analytics by Default**: Analytics is optional, user-controlled (future)
-- **No Cookies**: Platform doesn't use cookies (unless analytics enabled)
-- **GDPR Compliance**: Compliant (no personal data collection)
-
-#### Access Control
-- **Public Access**: All content publicly accessible (no authentication needed)
-- **No Admin Interface**: Content edited via git, no web admin
-- **Git Access Control**: Repository access control via git provider (GitHub, GitLab, etc.)
-
-### Accessibility Requirements
-
-#### WCAG 2.1 AA Compliance
-- **Level**: WCAG 2.1 Level AA (minimum compliance target)
-- **Level AAA**: Aspire to Level AAA where feasible
-
-#### Keyboard Navigation
-- **Full Keyboard Support**: All functionality accessible via keyboard
-- **Keyboard Shortcuts**: Support Ctrl/Cmd+K for search
-- **Focus Indicators**: Clear focus indicators for all interactive elements
-- **Skip Links**: Skip to main content links
-
-#### Screen Reader Support
-- **Semantic HTML**: Proper use of semantic HTML elements
-- **ARIA Labels**: ARIA labels for interactive elements
-- **Alt Text**: All images have descriptive alt text
-- **Headings Hierarchy**: Proper heading hierarchy (h1 → h2 → h3)
-
-#### Visual Accessibility
-- **Color Contrast**: Minimum 4.5:1 contrast ratio for text (WCAG AA)
-- **Text Scaling**: Text scales to 200% without horizontal scrolling
-- **Color Independence**: Information not conveyed by color alone
-- **Focus Indicators**: Clear focus indicators (minimum 2px)
-
-#### Content Accessibility
-
-- **Clear Language**: Clear, simple language
-- **Readable Fonts**: Minimum 16px base font size
-
-- **Line Height**: Minimum 1.5 line height for body text
-- **Paragraph Spacing**: Adequate spacing between paragraphs
-
-### Maintainability Requirements
-
-#### Code Quality
-
-- **TypeScript**: Strict TypeScript mode enabled
-- **ESLint**: ESLint configured with Next.js recommended rules
-
-
-- **Prettier**: Automated code formatting with Prettier
-- **Code Review**: All code changes reviewed before merge
-
-#### Documentation
-- **Code Comments**: Complex logic commented with clear explanations
-- **README**: Comprehensive README with setup instructions
-- **PRD**: Complete PRD (this document) with all specifications
-- **Component Documentation**: React components documented (JSDoc)
-
-#### Content Maintenance
-- **Content Standards**: Clear content production standards (Section 3.9)
-- **Content Templates**: Templates for consistent content structure
-- **Version Control**: All content version-controlled in git
-- **Content Review**: Content review process (peer review)
-
-### Scalability Requirements
-
-#### Content Scalability
-- **File-Based System**: Infinite scalability (add files, rebuild)
-- **Build Scalability**: Build time scales linearly with content
-- **Search Scalability**: Client-side search scales to ~10,000 files
-- **Future Scalability**: Server-side search if content grows beyond 10,000 files
-
-#### Traffic Scalability
-- **Static Hosting**: Static hosting provides infinite traffic capacity
-- **CDN**: Content delivery via CDN (automatic with Vercel/Netlify)
-- **Caching**: Aggressive caching for optimal performance
-- **No Backend**: No backend server limits scalability
-
-### Browser Compatibility Requirements
-
-#### Supported Browsers
-- **Chrome**: Latest 2 versions
-- **Firefox**: Latest 2 versions
-- **Safari**: Latest 2 versions
-- **Edge**: Latest 2 versions
-- **Mobile Browsers**: iOS Safari, Chrome Mobile (latest 2 versions)
-
-
-#### Progressive Enhancement
-- **Core Functionality**: Core functionality works without JavaScript
-- **Enhanced Features**: Enhanced features require JavaScript
-- **Graceful Degradation**: Features degrade gracefully when unsupported
-
-
-### Mobile Requirements
-
-#### Responsive Design
-- **Mobile-First**: Mobile-first responsive design
-- **Breakpoints**: 640px, 768px, 1024px breakpoints
-- **Touch-Friendly**: Touch targets minimum 44x44px
-
-- **Mobile Navigation**: Mobile-friendly navigation menu
-
-#### Mobile Performance
-
-- **Mobile Page Speed**: < 3 seconds on 3G connection
-- **Mobile Optimization**: Optimized images and assets for mobile
-- **Mobile Search**: Mobile-friendly search interface
-- **Mobile Reading**: Optimized reading experience on mobile
-
-### Internationalization Requirements
-
-#### Current Phase
-- **Language**: English only (initial phase)
-- **Character Encoding**: UTF-8 encoding
-- **Date Format**: ISO 8601 date format
-
-#### Future Phase
-- **Multi-Language Support**: Support for multiple languages (future)
-- **Language Switcher**: Language switcher in header (future)
-- **Content Translation**: Separate content files per language (future)
-
-- **RTL Support**: Right-to-left language support (future)
+[To be expanded: Performance, reliability, scalability, security, accessibility, etc.]
 
 ## 3.5 Success Metrics / KPIs
+[To be expanded: How we measure success, key performance indicators, analytics goals.]
 
-### User Engagement Metrics
-
-#### Traffic Metrics
-- **Monthly Unique Visitors**: Target 10,000+ within 6 months of launch
-- **Monthly Page Views**: Target 50,000+ within 6 months of launch
-- **Average Session Duration**: Target > 5 minutes per session
-- **Pages Per Session**: Target > 3 pages per session
-- **Bounce Rate**: Target < 60% (content sites typically 40-60%)
-
-#### Content Consumption Metrics
-- **Content Page Views**: Track views per module, per page
-- **Academy Completion Rate**: > 50% of users complete at least one Academy module
-- **Chapter Completion Rate**: > 60% average chapters completed per Academy module
-- **Content Depth**: Average time on page > 4 minutes for long-form content
-- **Search Usage**: > 30% of users use search functionality
-
-#### User Retention Metrics
-- **Return Visitor Rate**: > 40% of visitors return within 30 days
-- **Weekly Active Users**: Track weekly active users
-- **Monthly Active Users**: Track monthly active users
-- **User Growth Rate**: Target 20% month-over-month growth (first 6 months)
-
-### Content Quality Metrics
-
-#### Content Coverage
-- **Content Completeness**: Track coverage percentage for each module
-  - New Player Path: 100% (8/8 chapters)
-  - Ground Academy: 100% (19/19 chapters)
-
-  - Air Academy: 100% (20/20 chapters)
-  - Nation Guides: 100% (10/10 nations)
-  - Vehicle Encyclopedia: > 80% (top vehicles covered)
-  - Map Tactics: > 60% (major maps covered)
-  - Meta Hub: > 80% (major BR tiers covered)
-
-#### Content Accuracy
-- **Content Version Currency**: > 90% of content updated within 30 days of game updates
-
-
-- **Outdated Content Rate**: < 10% of content marked as outdated
-
-- **Content Error Reports**: Track and resolve content error reports
-- **Content Quality Score**: Internal quality score > 8/10
-
-#### Content Engagement
-- **Content Engagement Rate**: > 70% scroll depth on long-form content
-- **Cross-Link Click-Through Rate**: > 20% of users click cross-links
-- **Content Sharing Rate**: Track content shares (if social sharing enabled)
-- **Content Bookmark Rate**: Track content bookmarks (if bookmarking enabled)
-
-### Performance Metrics
-
-#### Page Load Performance
-- **Average Page Load Time**: < 2 seconds (target)
-- **Time to Interactive**: < 3 seconds (target)
-- **First Contentful Paint**: < 1.5 seconds (target)
-- **Largest Contentful Paint**: < 2.5 seconds (target)
-- **Cumulative Layout Shift**: < 0.1 (target)
-
-#### Build Performance
-- **Build Time**: < 5 minutes for full site generation
-- **Build Success Rate**: > 99% of builds succeed
-- **Build Frequency**: Track build frequency (daily, on content updates)
-
-### Business Metrics
-
-#### Growth Metrics
-- **User Acquisition**: Track new users per month
-- **User Growth Rate**: Target 20% month-over-month growth
-- **Content Growth Rate**: Track content growth (pages, words)
-- **Search Traffic**: Track organic search traffic growth
-
-#### Community Metrics
-- **Community Engagement**: Track community engagement (if enabled)
-- **Content Shares**: Track content shares across platforms
-
-- **Referral Traffic**: Track traffic from referrals
-- **Brand Mentions**: Track brand mentions in community
-
-### Technical Metrics
-
-#### Site Health
-- **Uptime**: > 99.9% uptime (target)
-- **Error Rate**: < 0.1% of requests result in errors
-- **Build Success Rate**: > 99% of builds succeed
-- **Search Success Rate**: > 99% of searches return results
-
-#### Security Metrics
-
-- **Security Incidents**: Track security incidents (target: 0)
-- **Vulnerability Reports**: Track and resolve vulnerability reports
-- **Compliance Status**: Maintain GDPR compliance (no personal data)
-
-### Module-Specific KPIs
-
-#### New Player Path Module
-
-- **Completion Rate**: > 50% of new players complete New Player Path
-
-- **Time to Completion**: Average time to complete < 2 hours
-- **Return Rate**: > 70% return after first session
-- **Chapter Completion Rate**: > 80% complete each chapter
-
-#### Academy Modules
-- **Module Completion Rate**: > 60% average completion rate per module
-- **Chapter Completion Rate**: > 60% average chapters completed
-- **Time Per Chapter**: Average time per chapter > 5 minutes
-- **Progress Rate**: > 2 chapters per session (users who progress)
-
-#### Vehicle Encyclopedia
-- **Vehicle Guide Views**: > 200 views per month per major vehicle
-- **Time on Vehicle Page**: Average time > 4 minutes
-- **Engagement Rate**: > 65% scroll depth on vehicle pages
-- **Cross-Link CTR**: > 20% click cross-links
-
-#### Map Tactics Module
-- **Map Page Views**: > 1000 views per month per major map
-- **Time on Map Page**: Average time > 3 minutes
-- **Engagement Rate**: > 70% scroll depth on map pages
-- **Cross-Link CTR**: > 25% click cross-links
-
-#### Meta Hub Module
-- **Meta Page Views**: > 2000 views per month
-- **Time on Meta Page**: Average time > 4 minutes
-- **Return Rate**: > 60% return for meta updates
-- **Cross-Link CTR**: > 25% click cross-links
-
-#### Nation Guides Module
-
-- **Nation Guide Views**: > 500 views per month per nation
-- **Time on Nation Page**: Average time > 5 minutes
-- **Engagement Rate**: > 70% scroll depth on nation pages
-- **Progression Rate**: > 40% follow nation guide recommendations
-
-### Analytics Implementation
-
-#### Analytics Tools (Future)
-- **Primary Analytics**: Plausible Analytics or Google Analytics (privacy-focused)
-- **Search Analytics**: Track search queries and results
-- **Content Analytics**: Track content performance (views, engagement)
-- **User Analytics**: Track user behavior (if user accounts enabled)
-
-#### Analytics Goals
-- **Track User Journey**: Understand user navigation patterns
-- **Identify Popular Content**: Identify most popular content
-
-- **Optimize Content**: Use analytics to optimize content strategy
-- **Measure Success**: Track KPIs and measure platform success
-
-### Reporting & Monitoring
-
-#### Regular Reporting
-- **Weekly Reports**: Weekly summary of key metrics
-- **Monthly Reports**: Monthly comprehensive report
-- **Quarterly Reviews**: Quarterly strategy review based on metrics
-
-#### Monitoring
-- **Real-Time Monitoring**: Monitor site health in real-time
-- **Alert System**: Alert on critical issues (downtime, errors)
-
-- **Performance Monitoring**: Monitor page load performance
-- **Build Monitoring**: Monitor build success and performance
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.763947 -->
+> [LOCAL-STUB] Phase P6.0005 (lines 497-616) – No Cursor driver. Echoing original chunk for testing.
 
 ---
 
@@ -2282,7 +771,6 @@ Features are organized into the following categories:
 - Deep tactical analysis and strategy
 - Structured multi-chapter training modules
 - Comprehensive meta analysis with evidence
-
 - BR tier-specific guidance and optimization
 - Detailed map tactics and positioning
 - Complete weak spot libraries with diagrams
@@ -2311,7 +799,6 @@ Features are organized into the following categories:
 **Strengths**:
 - Active community discussions
 - Diverse perspectives
-
 - Real-time meta discussions
 
 **Weaknesses**:
@@ -2319,7 +806,6 @@ Features are organized into the following categories:
 - Hard to navigate and find specific topics
 - Outdated information mixed with current
 - No structured learning path
-
 - Quality varies greatly
 - Search difficulty
 
@@ -2365,7 +851,6 @@ Features are organized into the following categories:
 - **Nation-specific map strategies**: Best vehicles and lineups per map
 - **Meta-aware map analysis**: How map meta changes with BR tiers
 
-
 #### 3. **Cross-Linked Knowledge Graph**
 - **Intelligent connections**: Content automatically links to related topics
 - **Progressive learning paths**: Start at basics, follow links to advanced topics
@@ -2375,7 +860,6 @@ Features are organized into the following categories:
 #### 4. **Meta Science & Analysis**
 - **Historical meta tracking**: How meta has evolved over time
 - **Update impact analysis**: How patches change meta
-
 - **Predictive insights**: Understanding meta trends
 - **BR tier clustering**: Comprehensive BR tier analysis
 
@@ -2409,7 +893,6 @@ Features are organized into the following categories:
 **Required Components**:
 - `Dashboard.tsx` - Main dashboard
 - `ModuleCard.tsx` - Card for each major module
-
 - `FeaturedContent.tsx` - Recently updated/featured articles
 - `QuickLinks.tsx` - Quick access to popular content
 
@@ -2429,7 +912,6 @@ Features are organized into the following categories:
 
 **KPIs**:
 - New player completion rate > 50%
-
 - Time to first gameplay success < 30 minutes
 - Return rate after first session > 70%
 
@@ -2439,7 +921,6 @@ Features are organized into the following categories:
 
 **Required Content Files**:
 - `/content/new-player-path/overview.md`
-
 - `/content/new-player-path/chapter-1-first-steps.md`
 - `/content/new-player-path/chapter-2-choosing-nation.md`
 - `/content/new-player-path/chapter-3-ground-basics.md`
@@ -2477,7 +958,6 @@ Features are organized into the following categories:
 **Key Topics Covered**:
 - Shell types, armor, penetration mechanics
 - Weak spot analysis and aiming techniques
-
 - Positioning and line of sight
 - Mobility tactics and flanking
 - Teamwork and coordination
@@ -2496,7 +976,6 @@ Features are organized into the following categories:
 - Teach air combat from basics to advanced tactics
 - Cover all aircraft types (fighters, bombers, attackers)
 - Energy fighting theory and application
-
 - Air RB and Sim Battle doctrine
 
 **KPIs**:
@@ -2518,7 +997,6 @@ Features are organized into the following categories:
 - Jet combat fundamentals
 - Missile systems and radar management
 - Countermeasures and ECM
-
 - Top-tier air combat
 
 ---
@@ -2546,7 +1024,6 @@ Features are organized into the following categories:
 
 **Each Map Guide Must Include**:
 - Map overview and key features
-
 - Spawn points analysis (all spawns)
 - Key positions and routes
 - Ground forces strategies (MBT, light tank, TD, SPAA)
@@ -2564,7 +1041,6 @@ Features are organized into the following categories:
 **Purpose**: Central hub for meta analysis, BR tier charts, competitive strategy.
 
 **Goals**:
-
 - Track meta changes over time
 - Provide BR tier analysis
 - Identify OP vehicles and counters
@@ -2590,7 +1066,6 @@ Features are organized into the following categories:
 **Each Meta Page Must Include**:
 - BR tier overview or update summary
 - Vehicle rankings table with tiers (S, A, B, C, D, F)
-
 - OP vehicle analysis with counters
 - Nation dominance analysis
 - Recommended lineups per nation
@@ -2617,7 +1092,6 @@ Features are organized into the following categories:
 **Required Pages**:
 - `/nations` - Nation index
 - `/nations/[nation]` - Individual nation guide
-
 
 **Required Content Files**: One markdown file per nation in `/content/nations/`
 
@@ -2688,7 +1162,6 @@ Features are organized into the following categories:
 
 ---
 
-
 ### 3.7.9 Economy Lab Module
 
 **Purpose**: Comprehensive economy guides and calculators.
@@ -2735,7 +1208,6 @@ Features are organized into the following categories:
 - Guide premium vehicle purchases
 - Analyze value vs. cost
 - Recommend best premiums per BR tier
-
 - Avoid buyer's remorse
 
 **KPIs**:
@@ -3169,356 +1641,6 @@ interface MetaEvaluation {
     guide: string;               // Path to meta guide
     charts: string[];            // Chart image paths
   };
-}
-```
-
-### Missile Object Schema
-
-```typescript
-interface Missile {
-  id: string;                    // Unique identifier (e.g., "atgm-tow")
-  name: string;                  // Display name (e.g., "TOW ATGM")
-  type: MissileType;             // ATGM, SAM, AAM, etc.
-  guidance: GuidanceType;        // SACLOS, IR, Radar, etc.
-  caliber: number;               // mm (for ATGMs)
-  
-  // Performance Data
-  performance: {
-    range: number;               // meters (effective range)
-    maxSpeed: number;            // m/s
-    acceleration: number;        // m/s²
-    maneuverability: number;     // G-force limit
-    timeToTarget: number;        // seconds (at max range)
-  };
-  
-  // Warhead Data
-  warhead: {
-    type: WarheadType;           // HEAT, HE, fragmentation, etc.
-    penetration: number;         // mm (for ATGMs)
-    explosiveMass: number;       // kg TNT equivalent
-    fragments: number;           // Fragment count (for SAM/AAM)
-  };
-  
-  // Guidance Data
-  guidanceData: {
-    trackingRange: number;       // meters (guidance range)
-    lockOnTime: number;          // seconds
-    lockOnAngle: number;         // degrees
-    minimumRange: number;        // meters
-    maximumRange: number;        // meters
-  };
-  
-  // Characteristics
-  characteristics: {
-    mass: number;                // kg
-    length: number;              // mm
-    reloadTime: number;          // seconds
-    fireRate: number;            // rounds per minute
-  };
-  
-  // Countermeasures
-  countermeasures: {
-    vulnerableToSmoke: boolean;  // Vulnerable to smoke
-    vulnerableToFlare: boolean;  // Vulnerable to flares
-    vulnerableToChaff: boolean;  // Vulnerable to chaff
-    vulnerableToAPS: boolean;    // Vulnerable to APS
-  };
-  
-  // Cost
-  cost: {
-    sl: number;                 // Silver Lions
-    research: boolean;          // Requires research
-  };
-  
-  // Content References
-  content: {
-    guide: string;              // Path to missile guide
-    diagram: string;            // Diagram image path
-  };
-}
-```
-
-### Radar System Object Schema
-
-```typescript
-interface RadarSystem {
-  id: string;                    // Unique identifier (e.g., "radar-pantsir")
-  name: string;                  // Display name (e.g., "Pantsir-S1 Radar")
-  type: RadarType;               // Search, Track, Search-Track, etc.
-  vehicle: string;               // Vehicle ID this radar belongs to
-  
-  // Detection Data
-  detection: {
-    searchRange: number;         // meters (air targets)
-    groundRange: number;         // meters (ground targets)
-    altitudeLimit: number;       // meters (max altitude)
-    scanRate: number;            // degrees per second
-    scanAngle: number;           // degrees (sector scan)
-  };
-  
-  // Tracking Data
-  tracking: {
-    trackRange: number;          // meters
-    trackRate: number;           // degrees per second
-    trackAccuracy: number;       // degrees (tracking accuracy)
-    lockOnTime: number;          // seconds
-    minimumRange: number;        // meters
-  };
-  
-  // Characteristics
-  characteristics: {
-    frequency: RadarFrequency;   // X-band, Ka-band, etc.
-    power: number;               // kW (transmission power)
-    beamWidth: number;           // degrees
-    updateRate: number;          // Hz (updates per second)
-    rotationSpeed: number;       // RPM (for rotating radars)
-  };
-  
-  // Electronic Warfare
-  ecm: {
-    resistantToECM: boolean;     // Resistant to ECM
-    resistantToJamming: boolean; // Resistant to jamming
-    trackThroughSmoke: boolean;  // Can track through smoke
-  };
-  
-  // Countermeasures
-  vulnerableTo: {
-    antiRadarMissiles: boolean;  // Vulnerable to ARM
-    ecm: boolean;                // Vulnerable to ECM
-    jamming: boolean;            // Vulnerable to jamming
-  };
-  
-  // Content References
-  content: {
-    guide: string;               // Path to radar guide
-    diagram: string;             // Diagram image path
-  };
-}
-```
-
-### Lineup Recommendation Schema
-
-```typescript
-interface LineupRecommendation {
-  id: string;                    // Unique identifier (e.g., "usa-br-10-7-lineup")
-  nation: Nation;                // Nation
-  brRange: {
-    min: number;                 // Minimum BR
-    max: number;                 // Maximum BR
-    target: number;              // Target BR for lineup
-  };
-  
-  // Vehicle Recommendations
-  vehicles: {
-    primary: VehicleRecommendation[];    // Primary vehicle choices (3-4)
-    alternative: VehicleRecommendation[]; // Alternative choices
-    spaa: VehicleRecommendation[];       // SPAA recommendations
-    aircraft: VehicleRecommendation[];    // Aircraft recommendations (if applicable)
-  };
-  
-  // Lineup Strategy
-  strategy: {
-    playstyle: PlaystyleType;    // Aggressive, Defensive, Balanced, etc.
-    strengths: string[];         // Lineup strengths
-    weaknesses: string[];        // Lineup weaknesses
-    keyVehicles: string[];       // Vehicle IDs that are essential
-    flexibleSlots: number;       // Number of flexible slots
-  };
-  
-  // Meta Context
-  meta: {
-    tier: "S" | "A" | "B" | "C" | "D";  // Overall lineup tier
-    popularity: number;          // Usage percentage
-    winRate: number;             // Win rate percentage
-    lastUpdated: string;         // ISO date
-    updateSource: string;        // Update that changed this meta
-  };
-  
-  // Map Recommendations
-  mapRecommendations: {
-    [mapId: string]: {
-      recommended: boolean;      // Recommended for this map
-      notes: string;             // Map-specific notes
-    };
-  };
-  
-  // Content References
-  content: {
-    guide: string;               // Path to lineup guide
-    comparison: string[];        // Paths to other lineup guides for comparison
-  };
-}
-
-interface VehicleRecommendation {
-  vehicleId: string;             // Vehicle ID
-  priority: number;              // Priority in lineup (1 = highest)
-  role: VehicleRole;             // Role in lineup (Main, Backup, SPAA, etc.)
-  required: boolean;             // Required for lineup to work
-  notes: string;                 // Notes about vehicle in lineup
-}
-```
-
-### Meta Patch Dataset Schema
-
-```typescript
-interface MetaPatchDataset {
-  id: string;                    // Unique identifier (e.g., "update-spearhead")
-  updateName: string;            // Update name (e.g., "Spearhead Update")
-  version: string;               // Game version (e.g., "2.33.0.123")
-  releaseDate: string;           // ISO date
-  
-  // Impact Summary
-  impact: {
-    metaShift: MetaShiftSeverity; // "major" | "moderate" | "minor" | "none"
-    affectedBRRanges: string[];   // BR ranges affected (e.g., ["10.0-11.7"])
-    affectedNations: Nation[];    // Nations most affected
-    keyChanges: string[];         // Key changes summary
-  };
-  
-  // Vehicle Changes
-  vehicleChanges: {
-    added: VehicleAddition[];     // New vehicles added
-    removed: VehicleRemoval[];    // Vehicles removed (rare)
-    modified: VehicleModification[]; // Vehicles modified
-    brChanges: BRChange[];        // BR changes
-  };
-  
-  // Meta Analysis
-  metaAnalysis: {
-    before: MetaSnapshot;         // Meta state before update
-    after: MetaSnapshot;          // Meta state after update
-    shifts: MetaShift[];          // Detailed meta shifts
-    newOPVehicles: string[];      // Vehicle IDs that became OP
-    nerfedVehicles: string[];     // Vehicle IDs that were nerfed
-    balancedVehicles: string[];   // Vehicle IDs that improved balance
-  };
-  
-  // Predictions vs Reality
-  predictions: {
-    predicted: MetaPrediction;    // What was predicted
-    actual: MetaSnapshot;         // What actually happened
-    accuracy: number;             // Prediction accuracy (0-1)
-    notes: string;                // Notes on prediction accuracy
-  };
-  
-  // Content References
-  content: {
-    guide: string;                // Path to update analysis guide
-    patchNotes: string;           // Link to official patch notes
-    charts: string[];             // Chart image paths
-  };
-}
-
-interface VehicleAddition {
-  vehicleId: string;             // Vehicle ID
-  br: number;                    // Initial BR
-  nation: Nation;                // Nation
-  impact: "high" | "medium" | "low"; // Expected meta impact
-}
-
-interface VehicleModification {
-  vehicleId: string;             // Vehicle ID
-  changes: string[];             // List of changes (armor, weapons, etc.)
-  impact: "high" | "medium" | "low"; // Expected meta impact
-}
-
-interface BRChange {
-  vehicleId: string;             // Vehicle ID
-  oldBR: number;                 // Old BR
-  newBR: number;                 // New BR
-  reason: string;                // Reason for BR change
-  impact: "buff" | "nerf" | "balance"; // Impact on vehicle
-}
-
-interface MetaSnapshot {
-  date: string;                  // ISO date
-  topVehicles: VehicleRanking[]; // Top vehicles per BR tier
-  dominantNations: Nation[];     // Dominant nations
-  metaTrends: string[];          // Current meta trends
-}
-```
-
-### BR Tier Cluster Data Schema
-
-```typescript
-interface BRTierCluster {
-  id: string;                    // Unique identifier (e.g., "br-tier-10-7")
-  brRange: {
-    min: number;                 // Minimum BR (e.g., 10.0)
-    max: number;                 // Maximum BR (e.g., 10.7)
-    primary: number;             // Primary BR (e.g., 10.7)
-  };
-  
-  // Vehicle Distribution
-  vehicleDistribution: {
-    totalVehicles: number;       // Total vehicles in tier
-    byNation: {
-      [nation: string]: number;  // Count per nation
-    };
-    byType: {
-      mbt: number;               // MBT count
-      lightTank: number;         // Light tank count
-      td: number;                // TD count
-      spaa: number;              // SPAA count
-    };
-  };
-  
-  // Meta Analysis
-  meta: {
-    overallBalance: BalanceRating; // "balanced" | "allied-favored" | "axis-favored" | "unbalanced"
-    dominantNation: Nation | null; // Currently dominant nation
-    metaShift: MetaShiftDirection; // "improving" | "declining" | "stable"
-    lastMajorShift: string;      // ISO date of last major shift
-  };
-  
-  // Vehicle Rankings
-  rankings: {
-    [vehicleId: string]: {
-      rank: number;              // Overall rank (1, 2, 3, ...)
-      tier: "S" | "A" | "B" | "C" | "D" | "F";
-      popularity: number;        // Usage percentage
-      winRate: number;           // Win rate percentage
-      kd: number;                // Kill/death ratio
-      reasons: string[];         // Why ranked here
-      counters: string[];        // Vehicle IDs that counter this
-    };
-  };
-  
-  // Lineup Analysis
-  lineupAnalysis: {
-    optimal: LineupRecommendation[]; // Optimal lineups per nation
-    common: LineupRecommendation[];  // Common lineups
-    effective: LineupRecommendation[]; // Effective but less common lineups
-  };
-  
-  // Matchmaking Data
-  matchmaking: {
-    averageBR: number;           // Average BR in matches
-    brSpread: number;            // Typical BR spread (e.g., ±0.7)
-    commonMatchups: {
-      [nationPair: string]: number; // Frequency of nation matchups
-    };
-  };
-  
-  // Historical Data
-  history: {
-    changes: BRChange[];         // Historical BR changes
-    metaShifts: MetaShift[];     // Historical meta shifts
-    trendData: TrendPoint[];     // Trend data points
-  };
-  
-  // Content References
-  content: {
-    guide: string;               // Path to BR tier guide
-    charts: string[];            // Chart image paths
-    lastUpdated: string;         // ISO date
-  };
-}
-
-interface TrendPoint {
-  date: string;                  // ISO date
-  meta: MetaSnapshot;            // Meta state at this point
-  dominantNation: Nation | null; // Dominant nation at this point
 }
 ```
 
@@ -4525,6 +2647,9 @@ Platform designed to work completely standalone:
 
 ---
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.749542 -->
+> [LOCAL-STUB] Phase P4.0005 (lines 496-615) – No Cursor driver. Echoing original chunk for testing.
+
 
 # 5. IMPLEMENTATION & ENGINEERING NOTES
 
@@ -4846,6 +2971,7 @@ Each phase/task should be mapped to implementation using this template:
 
 <!--
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.736177 -->
 AI features, data strategy, and analytics. Will be expanded by AI/ML and Data roles.
 -->
 
@@ -4857,6 +2983,8 @@ AI features, data strategy, and analytics. Will be expanded by AI/ML and Data ro
 
 ## 6.3 Privacy, Ethics & Safety
 [To be expanded: Data privacy, user consent, ethical AI, safety measures, compliance.]
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.730394 -->
 
 ---
 
@@ -4870,475 +2998,115 @@ Design and user experience. Will be expanded by design roles.
 
 ### Core UX Principles
 
-#### 1. Long-Form Reading First
-**Philosophy**: Platform is optimized for extended reading sessions (30+ minutes), comfortable typography, generous spacing, minimal distractions, focus on content
+1. **Long-Form Reading First**
+   - Optimized for extended reading sessions (30+ minutes)
+   - Comfortable typography, generous spacing
+   - Minimal distractions, focus on content
+   - Easy on eyes (dark theme, proper contrast)
 
-**Implementation**:
-- **Typography**: 16px base font size, 1.75 line height, max 65ch line width
-- **Spacing**: Generous whitespace (1.5rem between sections, 2rem vertical padding)
-- **Distractions**: Minimal UI chrome, hideable sidebar, no pop-ups or ads
-- **Eye Strain**: Dark theme (#0a0a0a background), proper contrast ratios (WCAG AA)
-- **Reading Flow**: Clear headings, short paragraphs, scannable lists
-- **Progress Indicators**: Reading progress bar, chapter completion indicators
+2. **Military/Tactical Aesthetic**
+   - Professional, authoritative appearance
+   - Dark, serious color palette
+   - Structured, hierarchical information display
+   - Clear, direct communication style
 
-#### 2. Military/Tactical Aesthetic
-**Philosophy**: Professional, authoritative appearance, dark serious color palette, structured hierarchical information display, clear direct communication style
+3. **Progressive Disclosure**
+   - Start with overview, drill down to details
+   - Chapter-based navigation for academy modules
+   - Expandable sections for complex topics
+   - Related content suggestions (knowledge graph)
 
-**Implementation**:
-- **Visual Style**: Military field manual aesthetic, tactical briefing style
-- **Color Palette**: Dark theme with tactical blue (#2563eb) accent
-- **Typography**: System fonts optimized for readability, monospace for stats
-- **Layout**: Structured, hierarchical, clear information architecture
-- **Communication**: Clear, direct, evidence-based, professional tone
+4. **Fast Access to Information**
+   - Quick search functionality
+   - Clear navigation structure
+   - Breadcrumbs for orientation
+   - Cross-linking between related content
 
-#### 3. Progressive Disclosure
-**Philosophy**: Start with overview, drill down to details, chapter-based navigation, expandable sections, related content suggestions
+5. **Content Stability**
+   - Never lose content (file-based system)
+   - Version history visible
+   - Clear update dates
+   - Reliable, consistent experience
 
-**Implementation**:
-- **Overview First**: Module/chapter overviews provide context before details
-- **Chapter Navigation**: Progressive chapter navigation (prev/next, chapter list)
-- **Expandable Sections**: Accordion components for complex topics
-- **Related Content**: Related content suggestions, cross-linking, knowledge graph
-- **Table of Contents**: Auto-generated TOC for long articles, sticky sidebar TOC
+### Interaction Design
 
-#### 4. Fast Access to Information
-**Philosophy**: Quick search functionality, clear navigation structure, breadcrumbs for orientation, cross-linking between related content
-
-**Implementation**:
-- **Search**: Prominent search bar in header, fast client-side search (< 100ms)
-- **Navigation**: Clear hierarchy (header, sidebar, breadcrumbs), easy current location
-- **Breadcrumbs**: Always visible breadcrumbs showing navigation path
-- **Cross-Linking**: Intelligent cross-linking, related content suggestions
-- **Quick Links**: Quick access to popular content, recent articles, bookmarks
-
-#### 5. Content Stability
-**Philosophy**: Never lose content (file-based system), version history visible, clear update dates, reliable consistent experience
-
-**Implementation**:
-- **File-Based System**: All content in version-controlled markdown files
-- **Version History**: Git version control, visible version numbers and update dates
-- **Update Tracking**: Clear last updated dates, version numbers (v1, v1.1, v2)
-- **Reliability**: Static site generation ensures fast, reliable performance
-- **Consistency**: Consistent content structure, cross-linking, formatting
-
-### Interaction Design Patterns
-
-#### Navigation Patterns
-
-**Header Navigation**:
-- **Main Sections**: Horizontal navigation bar with major sections (Academy, Nations, Maps, etc.)
-- **Search**: Prominent search bar (always visible, keyboard shortcut Ctrl/Cmd+K)
-- **Mobile**: Hamburger menu on mobile, slide-in navigation
-- **Current Page**: Highlighted current page/section
-
-**Breadcrumb Navigation**:
-- **Always Visible**: Breadcrumbs shown on all content pages
-- **Hierarchy**: Shows full path (Home > Academy > Ground Forces > Chapter 1)
-- **Clickable**: All breadcrumb segments clickable
-- **Mobile**: Truncated on mobile, full path on hover
-
-**Sidebar Navigation**:
-- **Optional**: Sticky sidebar with table of contents for long articles
-- **Collapsible**: Hideable sidebar for focused reading
-- **Progress**: Show reading progress, chapter completion
-- **Related**: Related content links in sidebar
-
-**Footer Navigation**:
-- **Site Map**: Links to all major sections
-- **Quick Links**: Popular content, featured articles
-- **Legal**: Privacy policy, terms of service (future)
-- **Social**: Social media links (future)
-
-#### Search Patterns
-
-**Search Bar**:
-- **Prominent**: Always visible in header, prominent placement
-- **Keyboard Shortcut**: Ctrl/Cmd+K to focus search
-- **Auto-Focus**: Auto-focus on mobile when opened
-- **Placeholder**: Clear placeholder text ("Search War Thunder guides...")
-
-**Search Results**:
-- **Fast**: < 100ms response time (client-side search)
-- **Relevant**: Accurate results, ranked by relevance
-- **Grouped**: Results grouped by category (Academy, Vehicles, Maps, etc.)
-- **Highlights**: Search terms highlighted in results
-- **Filters**: Category, nation, BR tier filters
-- **Snippets**: Result snippets with context
-
-#### Reading Patterns
-
-**Content Pages**:
-- **Clear Hierarchy**: H1 → H2 → H3 heading structure
-- **Table of Contents**: Auto-generated TOC for long articles
-- **Reading Progress**: Progress indicator (top or bottom)
-- **Chapter Navigation**: Prev/next chapter buttons
-- **Cross-Links**: Related content links (inline and sidebar)
-- **Print-Friendly**: Print stylesheet for long-form content
-
-**Academy Modules**:
-- **Module Overview**: Overview page with chapter list and progress
-- **Chapter Navigation**: Prev/next chapter, chapter list, progress tracking
-- **Learning Objectives**: Clear learning objectives at chapter start
-- **Practice Drills**: Interactive practice drills and exercises
-- **Progress Tracking**: Visual progress indicators, completion badges (future)
-
-**Reference Pages** (Vehicles, Maps, etc.):
-- **Quick Reference**: Stats tables, key information prominently displayed
-- **Diagrams**: Visual diagrams (weak spots, positioning, etc.)
-- **Comparison Tables**: Comparison with similar items
-- **Related Content**: Related vehicles, maps, meta analysis
-- **Bookmarking**: Save for later (localStorage initially)
-
-#### Mobile Patterns
-
-**Touch-Friendly**:
-- **Touch Targets**: Minimum 44x44px for all interactive elements
-- **Spacing**: Adequate spacing between clickable elements
-- **Gestures**: Swipe gestures for navigation (optional)
-- **Pull-to-Refresh**: Pull-to-refresh for content updates (future)
-
-**Mobile Navigation**:
-- **Hamburger Menu**: Collapsible hamburger menu
-- **Slide-In Menu**: Full-screen or slide-in navigation menu
-- **Bottom Navigation**: Bottom navigation bar for major sections (optional)
-- **Back Button**: Clear back button, browser back support
-
-**Mobile Content**:
-- **Readable**: Font sizes adjusted for mobile (minimum 16px)
-- **Scannable**: Clear headings, short paragraphs, bullet lists
-- **Images**: Responsive images, proper sizing, lazy loading
-- **Tables**: Horizontal scroll for wide tables, mobile-optimized table view
+- **Navigation**: Clear hierarchy, easy to understand current location
+- **Search**: Prominent search bar, fast results, filterable
+- **Reading**: Smooth scrolling, progress indicators, bookmarking
+- **Mobile**: Touch-friendly, responsive, readable on small screens
 
 ### Usability Goals
 
-#### Learnability
-- **Goal**: New users understand platform structure within 5 minutes
-- **Metrics**: Time to first navigation action < 3 seconds
-- **Implementation**: Clear navigation, prominent search, module cards, New Player Path
-- **Success Criteria**: 90% of new users can find desired content within 5 minutes
-
-#### Efficiency
-- **Goal**: Advanced users find information quickly
-- **Metrics**: Average search time < 10 seconds, average navigation clicks < 3
-- **Implementation**: Fast search, clear navigation, cross-linking, keyboard shortcuts
-- **Success Criteria**: Advanced users find specific information in < 10 seconds
-
-#### Satisfaction
-- **Goal**: Users trust content, return for more
-- **Metrics**: Return visitor rate > 40%, average session duration > 5 minutes
-- **Implementation**: High-quality content, consistent design, fast performance, reliable updates
-- **Success Criteria**: Users return weekly, trust content quality, recommend platform
-
-#### Accessibility
-- **Goal**: WCAG 2.1 AA compliant, keyboard navigable
-- **Metrics**: WCAG AA compliance, keyboard navigation coverage 100%
-- **Implementation**: Semantic HTML, ARIA labels, keyboard navigation, screen reader support
-- **Success Criteria**: Platform accessible to all users, meets WCAG 2.1 AA standards
-
-### UX Patterns for Specific Content Types
-
-#### Academy Module Pattern
-- **Overview Page**: Module overview with chapter list, estimated time, prerequisites
-- **Chapter Page**: Chapter content with navigation, progress, practice drills
-- **Navigation**: Prev/next chapter, chapter list, module overview link
-- **Progress**: Visual progress indicators, chapter completion, module completion
-
-#### Vehicle Guide Pattern
-- **Quick Stats**: Vehicle stats prominently displayed at top
-- **Weak Spot Diagram**: Visual weak spot diagram (front, side, top)
-- **Detailed Analysis**: Armor, armament, mobility, playstyle analysis
-- **Comparison**: Comparison with similar vehicles
-- **Lineups**: Recommended lineups, map strategies
-- **Cross-Links**: Links to maps, meta, nation guides
-
-#### Map Guide Pattern
-- **Map Overview**: Map overview image, key features, size
-- **Spawn Analysis**: All spawn points analyzed with immediate routes
-- **Positioning Diagrams**: Visual positioning diagrams for key positions
-- **Route Visualization**: Recommended routes from each spawn
-- **Vehicle Strategies**: Vehicle-specific strategies (MBT, light tank, TD, SPAA)
-- **Nation Strategies**: Nation-specific recommendations
-- **BR Tactics**: BR tier-specific tactics
-
-#### Meta Analysis Pattern
-- **BR Tier Overview**: BR tier overview with dominant nations, meta trends
-- **Vehicle Rankings**: Vehicle rankings table with tier ratings (S, A, B, C, D, F)
-- **OP Vehicle Analysis**: OP vehicles with counters and analysis
-- **Lineup Recommendations**: Optimal lineups per nation
-- **Update Impact**: Update impact analysis (if applicable)
-- **Historical Tracking**: Meta shift timeline, trend analysis
+- **Learnability**: New users understand structure within 5 minutes
+- **Efficiency**: Advanced users find information quickly
+- **Satisfaction**: Users trust content, return for more
+- **Accessibility**: WCAG 2.1 AA compliant, keyboard navigable
 
 ## 7.2 Visual Style
 
 ### Brand Identity
 
-**Personality**: Professional, authoritative, tactical, educational, military-inspired
-**Voice**: Clear, direct, evidence-based, respectful of player intelligence, instructional
-**Tone**: Serious but approachable, instructional but not condescending, tactical but accessible
-**Visual Language**: Military field manual aesthetic, tactical briefing style, professional reference manual
+**Personality**: Professional, authoritative, tactical, educational
+**Voice**: Clear, direct, evidence-based, respectful of player intelligence
+**Tone**: Serious but approachable, instructional but not condescending
 
-### Color Palette (Dark Tactical Theme)
-
-**Color Philosophy**: Dark theme optimized for extended reading sessions, military/tactical aesthetic, professional appearance, reduced eye strain
+### Color Palette (Dark Theme)
 
 **Primary Colors**:
-- **Background Primary**: `#0a0a0a` (near black, RGB: 10, 10, 10)
-- **Background Surface**: `#1a1a1a` (dark gray, RGB: 26, 26, 26) - For cards, elevated surfaces
-- **Background Elevated**: `#252525` (lighter dark gray, RGB: 37, 37, 37) - For hover states, active elements
-- **Primary**: `#2563eb` (tactical blue, RGB: 37, 99, 235) - Main brand color, links, highlights
-- **Primary Hover**: `#3b82f6` (lighter blue, RGB: 59, 130, 246) - Interactive states
-- **Primary Light**: `#60a5fa` (light blue, RGB: 96, 165, 250) - Subtle highlights
-- **Accent**: `#dc2626` (warning red, RGB: 220, 38, 38) - Warnings, important alerts
-- **Accent Warning**: `#f59e0b` (amber, RGB: 245, 158, 11) - Caution, attention
+- **Background**: `#0a0a0a` (near black)
+- **Surface**: `#1a1a1a` (dark gray)
+- **Primary**: `#2563eb` (tactical blue)
+- **Accent**: `#dc2626` (warning red)
 
 **Text Colors**:
-- **Primary Text**: `#f5f5f5` (off-white, RGB: 245, 245, 245) - Main content text
-- **Secondary Text**: `#a3a3a3` (light gray, RGB: 163, 163, 163) - Metadata, captions
-- **Muted Text**: `#737373` (medium gray, RGB: 115, 115, 115) - Subtle text, timestamps
-- **Links**: `#3b82f6` (blue) - Default link color
-- **Links Hover**: `#60a5fa` (lighter blue) - Link hover state
-- **Links Visited**: `#818cf8` (purple-blue, RGB: 129, 140, 248) - Visited links
+- **Primary Text**: `#f5f5f5` (off-white)
+- **Secondary Text**: `#a3a3a3` (light gray)
+- **Muted Text**: `#737373` (medium gray)
+- **Links**: `#3b82f6` (blue), hover: `#60a5fa` (lighter blue)
 
 **Semantic Colors**:
-- **Success**: `#10b981` (green, RGB: 16, 185, 129) - Success states, positive feedback
-- **Warning**: `#f59e0b` (amber, RGB: 245, 158, 11) - Warnings, caution
-- **Error**: `#ef4444` (red, RGB: 239, 68, 68) - Errors, failures
-- **Info**: `#3b82f6` (blue, RGB: 59, 130, 246) - Information, tips
-- **Meta Tier S**: `#10b981` (green) - S-tier vehicles
-- **Meta Tier A**: `#3b82f6` (blue) - A-tier vehicles
-- **Meta Tier B**: `#f59e0b` (amber) - B-tier vehicles
-- **Meta Tier C**: `#a3a3a3` (gray) - C-tier vehicles
-- **Meta Tier D**: `#737373` (darker gray) - D-tier vehicles
-- **Meta Tier F**: `#dc2626` (red) - F-tier vehicles
+- **Success**: `#10b981` (green)
+- **Warning**: `#f59e0b` (amber)
+- **Error**: `#ef4444` (red)
+- **Info**: `#3b82f6` (blue)
 
-**Border Colors**:
-- **Border Default**: `#2a2a2a` (dark gray, RGB: 42, 42, 42) - Default borders
-- **Border Hover**: `#3a3a3a` (lighter gray, RGB: 58, 58, 58) - Hover states
-- **Border Active**: `#2563eb` (primary blue) - Active/focused states
-
-**Contrast Ratios** (WCAG AA Compliance):
-- **Primary Text on Background**: 16.6:1 (AAA compliant)
-- **Secondary Text on Background**: 6.2:1 (AA compliant)
-- **Links on Background**: 4.8:1 (AA compliant)
-- **Primary on Background**: 4.8:1 (AA compliant)
-
-### Typography System
-
-**Typography Philosophy**: Optimized for long-form reading, comfortable line height, readable font sizes, professional appearance
+### Typography
 
 **Font Stack**:
-- **Primary (Body Text)**: System fonts optimized for reading
+- **Primary**: System fonts (optimized for reading)
   - `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`
-  - Fallback to system default sans-serif
-  - Chosen for readability, familiarity, and performance
-- **Monospace (Code/Stats)**: `"Courier New", Courier, monospace`
-  - For code blocks, vehicle stats, technical data
-  - Ensures fixed-width alignment for numerical data
+- **Monospace** (for code/stats): `"Courier New", Courier, monospace`
 
-**Font Size Scale**:
-- **H1 (Page Title)**: `3rem` (48px) - Largest heading, page titles
-- **H2 (Section Header)**: `2rem` (32px) - Major section headers
-- **H3 (Subsection Header)**: `1.5rem` (24px) - Subsection headers
-- **H4**: `1.25rem` (20px) - Minor subsection headers
-- **H5**: `1.125rem` (18px) - Small subsection headers
-- **H6**: `1rem` (16px) - Smallest headers
-- **Body Text**: `1rem` (16px) - Main content text
-- **Small Text**: `0.875rem` (14px) - Secondary text, captions, metadata
-- **Extra Small**: `0.75rem` (12px) - Fine print, timestamps
+**Font Sizes**:
+- **H1**: `3rem` (48px) - Page titles
+- **H2**: `2rem` (32px) - Section headers
+- **H3**: `1.5rem` (24px) - Subsection headers
+- **Body**: `1rem` (16px) - Main content
+- **Small**: `0.875rem` (14px) - Secondary text
 
-**Line Height**:
-- **Body Text**: `1.75` (175%) - Comfortable for long reading, optimal line spacing
-- **Headings**: `1.2` (120%) - Tighter for headings, better visual hierarchy
-- **Code/Stats**: `1.5` (150%) - Readable for monospace content
+**Line Height**: `1.75` for body text (comfortable for long reading)
+**Line Length**: Max `65ch` (optimal reading width)
 
-**Line Length**:
-- **Optimal Reading Width**: Max `65ch` (65 characters) - Optimal for reading comprehension
-- **Maximum Width**: Max `75ch` (75 characters) - Maximum before line becomes too long
-- **Container Width**: Max `1200px` for content area, centered
+### Iconography
 
-**Font Weight**:
-- **Normal**: `400` (regular) - Body text
-- **Semibold**: `600` - Headings, emphasis
-- **Bold**: `700` - Strong emphasis, important text
-
-**Letter Spacing**:
-- **Normal**: Default letter spacing
-- **Tight**: `-0.025em` - For large headings (H1, H2)
-- **Wide**: `0.05em` - For uppercase labels, badges
-
-### Iconography System
-
-**Icon Philosophy**: Minimal, clean, military-inspired, consistent sizing, clear meaning
-
-**Icon Style**:
 - **Style**: Minimal, clean, military-inspired
-- **Design**: Outline style (1-2px stroke), not filled
-- **Consistency**: Consistent visual weight across all icons
-- **Clarity**: Icons must be clearly recognizable at intended sizes
-
-**Icon Sizes**:
-- **Small**: `16px` - Inline with text, small UI elements
-- **Medium**: `24px` - Standard size, navigation items, buttons
-- **Large**: `32px` - Prominent icons, featured content
-- **Extra Large**: `48px` - Hero sections, large CTAs
-
-**Icon Usage**:
-- **Navigation**: Module icons, section icons, navigation indicators
-- **Callouts**: Tip icons, warning icons, note icons, info icons
-- **Content**: Vehicle types, nation flags, BR tier indicators
-- **Actions**: Search, bookmark, share, download (future)
-- **Status**: Published, draft, archived, updated
-
-**Icon Library**: 
-- **Primary**: Heroicons (outline style) or Lucide Icons
-- **Custom**: Custom SVG icons for War Thunder-specific content (vehicle types, nations)
-- **Format**: SVG format for scalability and customization
+- **Size**: Consistent sizing system (16px, 24px, 32px)
+- **Usage**: Navigation, callouts, visual indicators
+- **Library**: Simple SVG icons or icon library (Heroicons, Lucide)
 
 ### Visual Elements
 
-**Tables**:
-- **Style**: Clean borders, alternating row colors, clear headers
-- **Border**: `1px solid #2a2a2a` - Subtle borders
-- **Header Background**: `#1a1a1a` - Dark gray header background
-- **Row Background**: Alternating `#0a0a0a` and `#1a1a1a` for readability
-- **Hover**: `#252525` background on row hover
-- **Typography**: Monospace for numerical data, system font for text
-- **Alignment**: Left-align text, right-align numbers
-- **Padding**: `0.75rem` horizontal, `0.5rem` vertical
+**Tables**: Clean borders, alternating row colors, clear headers
+**Callouts**: Highlighted boxes with icons (tip, warning, note)
+**Code Blocks**: Dark background, syntax highlighting
+**Diagrams**: ASCII diagrams or SVG placeholders (tactical layouts)
 
-**Callouts**:
-- **Style**: Highlighted boxes with icons (tip, warning, note, info)
-- **Background**: `#1a1a1a` with colored left border (4px)
-- **Border**: `1px solid #2a2a2a` with colored accent border
-- **Colors**:
-  - **Tip**: Green border (`#10b981`)
-  - **Warning**: Amber border (`#f59e0b`)
-  - **Error**: Red border (`#ef4444`)
-  - **Info**: Blue border (`#3b82f6`)
-  - **Note**: Gray border (`#737373`)
-- **Icon**: Colored icon matching border color
-- **Padding**: `1rem` all around
-- **Typography**: Body text with bold title
+### Layout
 
-**Code Blocks**:
-- **Style**: Dark background, syntax highlighting
-- **Background**: `#1a1a1a` - Dark gray background
-- **Border**: `1px solid #2a2a2a` - Subtle border
-- **Typography**: Monospace font, `0.875rem` size
-- **Syntax Highlighting**: Prism.js or similar with dark theme
-- **Padding**: `1rem` all around
-- **Scroll**: Horizontal scroll for long lines
-
-**Diagrams**:
-- **Style**: ASCII diagrams or SVG placeholders (tactical layouts)
-- **Format**: ASCII for simple diagrams, SVG for complex visualizations
-- **Background**: Transparent or `#1a1a1a` background
-- **Colors**: Use theme colors for SVG diagrams
-- **Sizing**: Responsive, max-width 100%
-
-**Cards**:
-- **Style**: Elevated surfaces with subtle borders
-- **Background**: `#1a1a1a` - Surface color
-- **Border**: `1px solid #2a2a2a` - Subtle border
-- **Hover**: `#252525` background, `#2563eb` border on hover
-- **Shadow**: Subtle shadow on hover (optional, for depth)
-- **Padding**: `1.5rem` all around
-- **Border Radius**: `0.5rem` (8px) - Subtle rounded corners
-
-**Buttons**:
-- **Primary Button**:
-  - Background: `#2563eb` (primary blue)
-  - Text: `#ffffff` (white)
-  - Hover: `#3b82f6` (lighter blue)
-  - Padding: `0.75rem 1.5rem`
-  - Border Radius: `0.375rem` (6px)
-- **Secondary Button**:
-  - Background: Transparent
-  - Border: `1px solid #2a2a2a`
-  - Text: `#f5f5f5` (primary text)
-  - Hover: `#1a1a1a` background
-- **Text Button**:
-  - Background: Transparent
-  - Text: `#3b82f6` (link color)
-  - Hover: `#60a5fa` (lighter blue)
-
-### Layout System
-
-**Grid System**:
-- **Container Max Width**: `1200px` - Maximum content width
-- **Content Max Width**: `65ch` - Optimal reading width
-- **Container Padding**: `1rem` (16px) mobile, `2rem` (32px) desktop
-- **Grid Columns**: 12-column grid system
-- **Gap**: `1.5rem` (24px) between grid items
-
-**Spacing Scale**:
-- **XS**: `0.25rem` (4px)
-- **SM**: `0.5rem` (8px)
-- **MD**: `1rem` (16px)
-- **LG**: `1.5rem` (24px)
-- **XL**: `2rem` (32px)
-- **2XL**: `3rem` (48px)
-- **3XL**: `4rem` (64px)
-
-**Section Spacing**:
-- **Between Sections**: `1.5rem` (24px) minimum
-- **Between Large Sections**: `3rem` (48px)
-- **Content Padding**: `2rem` (32px) vertical, `1rem` (16px) horizontal
-
-**Responsive Breakpoints**:
-- **Mobile**: `0px - 639px` - Single column, stacked layout
-- **Tablet**: `640px - 1023px` - Two columns, responsive grid
-- **Desktop**: `1024px+` - Three columns, full layout
-
-**Layout Patterns**:
-- **Single Column**: Content-focused pages (articles, guides)
-- **Two Column**: Dashboard, hub pages (content + sidebar)
-- **Three Column**: Complex pages (content + sidebar + related)
-- **Grid**: Card layouts (module cards, vehicle cards)
-
-### Interactive States
-
-**Hover States**:
-- **Links**: Color change to `#60a5fa`, underline (optional)
-- **Buttons**: Background color change, slight scale (1.02x)
-- **Cards**: Border color change to `#2563eb`, background to `#252525`
-- **Navigation Items**: Background to `#252525`, text color to `#3b82f6`
-
-**Focus States**:
-- **Focus Ring**: `2px solid #2563eb` outline
-- **Focus Background**: `#252525` for interactive elements
-- **Keyboard Navigation**: Full keyboard accessibility
-
-**Active States**:
-- **Active Links**: `#3b82f6` color, underline
-- **Active Buttons**: Slightly darker background
-- **Active Navigation**: `#2563eb` background, `#ffffff` text
-
-**Disabled States**:
-- **Background**: `#1a1a1a`
-- **Text**: `#737373` (muted)
-- **Opacity**: `0.5` for visual indication
-- **Cursor**: `not-allowed`
-
-### Mobile Responsiveness
-
-**Mobile-First Design**:
-- **Base Styles**: Mobile styles (0-639px)
-- **Progressive Enhancement**: Add desktop styles at breakpoints
-- **Touch Targets**: Minimum `44x44px` for all interactive elements
-- **Touch-Friendly**: Adequate spacing between clickable elements
-
-**Mobile Navigation**:
-- **Hamburger Menu**: Collapsible navigation menu
-- **Full-Width**: Mobile menu takes full screen or slide-in
-- **Close Button**: Clear close button, easy to tap
-- **Touch Gestures**: Swipe gestures for navigation (optional)
-
-**Mobile Content**:
-- **Readable**: Font sizes adjusted for mobile readability
-- **Scannable**: Clear headings, short paragraphs, lists
-- **Images**: Responsive images, proper sizing
-- **Tables**: Horizontal scroll for wide tables
+- **Container Width**: Max `1200px` for content, centered
+- **Spacing**: Generous whitespace, `1.5rem` between sections
+- **Grid**: Flexible grid for multi-column layouts
+- **Responsive**: Mobile-first, breakpoints at 640px, 768px, 1024px
 
 ## 7.3 Content Strategy
 
@@ -5430,6 +3198,7 @@ This section contains canonical prompt templates and task frameworks that guide 
 
 When enhancing a section of this PRD, select roles from the Omni-Corp Master Role Library based on:
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.771275 -->
 1. **Section Type**: Different sections benefit from different expertise:
    - Vision & Strategy → CPO, CTO, Growth Lead
    - Technical Architecture → CTO, Principal Architect, DevOps
@@ -5448,6 +3217,7 @@ When enhancing a section of this PRD, select roles from the Omni-Corp Master Rol
 
 ---
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.764697 -->
 ## 8.2 Canonical Prompt Templates
 
 ### Template: Role-Based Section Expansion
@@ -5478,6 +3248,7 @@ Constraints:
 - Label assumptions with [ASSUMPTION], open questions with [OPEN_QUESTION], and risks with [RISK].
 - Output in markdown, and wrap your final improved section between:
 
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.750178 -->
 <<<IMPROVED_CHUNK_START>>>
 ...your improved markdown...
 **Prompt Pattern:**
@@ -5575,8 +3346,12 @@ ORIGINAL SECTION:
 ```
 
 ---
+> [LOCAL-STUB] Phase P4.0007 (lines 739-858) – No Cursor driver. Echoing original chunk for testing.
+
 
 ## 8.3 Phase & Task Framework
+> [LOCAL-STUB] Phase P3.0007 (lines 723-842) – No Cursor driver. Echoing original chunk for testing.
+
 
 ### Phase ID Naming Scheme
 
@@ -5591,6 +3366,8 @@ Phases are organized hierarchically using a three-level numbering system:
   - Example: `Phase 3.1.x` = Users & Personas
   - Example: `Phase 3.2.x` = Use Cases & Scenarios
   - Example: `Phase 4.1.x` = Overall Architecture Overview
+> [LOCAL-STUB] Phase P2.0007 (lines 735-854) – No Cursor driver. Echoing original chunk for testing.
+
 
 - **Level 3 (Micro-Task)**: Specific enhancement or task within a subsection
   - Example: `Phase 3.1.1` = Define Primary User Persona
@@ -5604,6 +3381,8 @@ This hierarchical structure allows the automation system to:
 - Support incremental growth from small tasks to large-scale expansion
 
 ### Canonical Task Template
+> [LOCAL-STUB] Phase P1.0007 (lines 734-851) – No Cursor driver. Echoing original chunk for testing.
+
 
 Each micro-task should be described using the following template:
 
@@ -5619,6 +3398,8 @@ Each micro-task should be described using the following template:
   - [Input 2]
 - **Outputs:** [what must exist after completion]
   - [Output 1]
+> [LOCAL-STUB] Phase P8.0008 (lines 837-956) – No Cursor driver. Echoing original chunk for testing.
+
   - [Output 2]
 - **Success Criteria:** [how to judge that the task is "done"]
   - [Criterion 1]
@@ -5637,6 +3418,8 @@ Each micro-task should be described using the following template:
 - **Phase ID:** 3.1.1
 - **Title:** Define Primary User Persona
 - **Goal:** Create a detailed persona for the primary target user, including demographics, goals, pain points, and behaviors.
+> [LOCAL-STUB] Phase P7.0008 (lines 859-969) – No Cursor driver. Echoing original chunk for testing.
+
 - **Primary Role(s):** CPO / Product Lead, UI/UX Lead Designer
 - **Inputs:**
   - Section 1.2 Target Users (high-level description)
@@ -5656,6 +3439,8 @@ Each micro-task should be described using the following template:
   - [RISK] Persona may be too generic; ensure specificity through examples
 ```
 
+> [LOCAL-STUB] Phase P6.0008 (lines 860-947) – No Cursor driver. Echoing original chunk for testing.
+
 ---
 
 ## 8.4 Automation Integration Notes
@@ -5669,6 +3454,8 @@ The automation system (auto_master.py) uses these templates and frameworks to:
 3. **Plan Future Enhancements**: The task framework helps identify what needs to be done next and in what order.
 
 4. **Ensure Consistency**: Using canonical templates ensures all enhancements follow consistent patterns and quality standards.
+> [LOCAL-STUB] Phase P5.0008 (lines 854-924) – No Cursor driver. Echoing original chunk for testing.
+
 
 5. **Support Multi-Role Collaboration**: Different roles can enhance the same section from different perspectives, building comprehensive coverage.
 
@@ -5707,254 +3494,21 @@ Project management and planning. Will be expanded by Product and Project Manager
 -->
 
 ## 9.1 Immediate Tasks
-
-### Current Sprint: MVP Structure & Foundation (Weeks 1-4)
-
-**Priority: Critical (Must Complete)**
-
-#### Week 1: Project Setup & Foundation
-- [ ] Initialize Next.js project with TypeScript and App Router
-- [ ] Configure Tailwind CSS with dark military theme
-- [ ] Set up folder structure (`/app`, `/components`, `/content`, `/lib`, `/types`)
-- [ ] Create root layout (`app/layout.tsx`) with Header and Footer
-- [ ] Create dashboard/home page (`app/page.tsx`)
-- [ ] Implement basic navigation components (Header, Footer)
-- [ ] Set up content loader utility (`lib/content/loader.ts`)
-- [ ] Configure TypeScript types (`types/content.ts`)
-- [ ] Create placeholder content files structure
-- [ ] Test basic rendering and navigation
-
-#### Week 2: Content System & Basic Pages
-- [ ] Implement Markdown/MDX content loading
-- [ ] Create content renderer component (`ContentRenderer.tsx`)
-- [ ] Create content header and footer components
-- [ ] Implement basic search functionality (client-side)
-- [ ] Create module card components
-- [ ] Create placeholder pages for all major modules
-- [ ] Create placeholder content files for all modules
-- [ ] Test content loading and rendering
-- [ ] Test cross-linking system (basic)
-
-#### Week 3: Navigation & UI Components
-- [ ] Implement breadcrumb navigation
-- [ ] Create sidebar navigation component
-- [ ] Implement mobile navigation menu
-- [ ] Create UI component library (Button, Card, Table, Callout, Badge)
-- [ ] Polish dark theme implementation
-- [ ] Implement responsive design (mobile-first)
-- [ ] Test navigation on all device sizes
-- [ ] Test UI components across pages
-
-#### Week 4: Polish & MVP Completion
-- [ ] Complete all placeholder pages
-- [ ] Complete all placeholder content files
-- [ ] Implement basic SEO (meta tags, structured data)
-- [ ] Test accessibility (keyboard navigation, screen readers)
-- [ ] Performance optimization (image optimization, code splitting)
-- [ ] Final testing and bug fixes
-- [ ] MVP ready for content expansion
-
-### Current Blockers
-- None identified
-
-### Immediate Next Steps
-1. Complete MVP structure (Week 1-4)
-2. Begin content expansion (Phase 2: Alpha)
-
----
+[To be expanded: Current sprint tasks, blockers, immediate next steps.]
 
 ## 9.2 Short-Term Roadmap
+[To be expanded: Next 1-3 months, upcoming releases, short-term milestones.]
 
-### Next 1-3 Months: Alpha Phase (Weeks 5-12)
-
-**Goal**: Expand core content, implement key modules
-
-#### Month 1 (Weeks 5-8): Core Content Foundation
-
-**Week 5-6: New Player Path & Ground Academy Start**
-- Complete New Player Path module (8 chapters)
-- Start Ground Academy module (chapters 1-5)
-- Create nation guides (USA, Germany, Russia)
-- Create top 10 vehicle guides
-- Test content quality and cross-linking
-
-**Week 7-8: Vehicle & Map Expansion**
-- Complete Ground Academy chapters 6-10
-- Create top 20 vehicle guides
-- Create 5 major map guides (Fulda Gap, Poland, etc.)
-- Start Meta Hub (BR tier analysis for 3 tier ranges)
-- Expand cross-linking system
-
-#### Month 2 (Weeks 9-12): Core Module Completion
-
-**Week 9-10: Academy & Nation Expansion**
-- Complete Ground Academy (chapters 11-19)
-- Start Air Academy module (chapters 1-10)
-- Complete nation guides (all 10 nations)
-- Expand Vehicle Encyclopedia (top 30 vehicles)
-- Create Weakspot Library (top 15 vehicles)
-
-**Week 11-12: Meta & Map Completion**
-- Complete Meta Hub (all major BR tier ranges)
-- Expand Map Tactics (10 major maps)
-- Complete content cross-linking system
-- Content quality review and improvements
-- Alpha phase completion
-
-### Key Milestones (Next 3 Months)
-
-#### Milestone 1: New Player Path Complete (Week 6)
-- **Target**: All 8 New Player Path chapters complete
-- **Success Criteria**: New players can follow complete path
-- **Content**: 8 chapters, ~12,000 words total
-
-#### Milestone 2: Ground Academy Complete (Week 10)
-- **Target**: All 19 Ground Academy chapters complete
-- **Success Criteria**: Complete ground forces training available
-- **Content**: 19 chapters, ~28,500 words total
-
-#### Milestone 3: Core Modules Functional (Week 12)
-- **Target**: All core modules have substantial content
-- **Success Criteria**: Users can find comprehensive guides for major topics
-- **Content**: 50+ content pages, ~75,000 words total
-
-### Success Metrics (Next 3 Months)
-- Content pages: 50+ complete pages
-- Word count: 75,000+ words of content
-- User engagement: 100+ monthly visitors (initial launch)
-- Content quality: All content meets production standards
-- Cross-links: Average 5+ cross-links per page
-
----
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.751657 -->
+> [LOCAL-STUB] Phase P4.0008 (lines 862-907) – No Cursor driver. Echoing original chunk for testing.
 
 ## 9.3 Long-Term Roadmap
-
-### 6-12 Month Vision: Beta to Full Launch
-
-**Goal**: Complete content coverage, polish platform, launch publicly
-
-#### Months 3-4: Beta Phase (Weeks 13-20)
-
-**Month 3: Academy Completion**
-- Complete Air Academy module (all 20 chapters)
-- Start Heli Academy module (15 chapters)
-- Start Naval Academy module (15 chapters)
-- Expand Vehicle Encyclopedia (all top-tier vehicles)
-- Expand Map Tactics (20 major maps)
-
-**Month 4: Complete Coverage**
-- Complete all Academy modules (Ground, Air, Heli, Naval)
-- Complete all Nation Guides (all 10 nations)
-- Expand Vehicle Encyclopedia (popular mid-tier vehicles)
-- Complete Meta Hub (all BR tier ranges)
-- Start Economy Lab module
-- Start Premium Tier Lists module
-
-#### Months 5-6: Full Coverage & Polish
-
-**Month 5: Comprehensive Expansion**
-- Complete Economy Lab (all guides and calculators)
-- Complete Premium Tier Lists (comprehensive analysis)
-- Complete Weapons & Systems (all major weapon types)
-- Expand Weakspot Library (top 50 vehicles)
-- Complete Future Tech & Leak Radar (basic tracking)
-- All major modules have comprehensive coverage
-
-**Month 6: Launch Preparation**
-- UI/UX polish and refinement
-- Performance optimization (< 2s load time target)
-- SEO optimization (structured data, meta tags)
-- Accessibility improvements (WCAG 2.1 AA)
-- Content quality audit
-- User testing and feedback incorporation
-- Documentation and help system
-- **Launch**: Public launch at end of Month 6
-
-#### Months 7-12: Post-Launch Enhancement
-
-**Month 7-8: Interactive Features (Phase 5)**
-- Interactive diagrams (SVG/React components)
-- Vehicle comparison tool
-- Lineup builder tool
-- Meta tracker with historical charts
-- Damage model calculator
-- User progress tracking (localStorage-based)
-
-**Month 9-10: Content Expansion & Updates**
-- Continue content expansion based on user feedback
-- Update content after major game updates
-- Expand coverage to less-popular vehicles/maps
-- Enhance existing content with user feedback
-- Community engagement and feedback collection
-
-**Month 11-12: Advanced Features (Phase 6 - Evaluation)**
-- Evaluate advanced features (user accounts, comments, etc.)
-- Implement high-priority advanced features
-- Community contribution system (if viable)
-- Enhanced analytics and insights
-- Platform optimization and scaling
-
-### Strategic Initiatives (6-12 Months)
-
-#### Initiative 1: Content Expansion
-- **Goal**: Cover all major War Thunder content comprehensively
-- **Target**: 500+ content pages, 500,000+ words
-- **Focus**: Vehicles, maps, meta analysis, academy modules
-
-#### Initiative 2: Community Building
-- **Goal**: Build engaged user community
-- **Target**: 10,000+ monthly active users
-- **Focus**: Quality content, SEO, community engagement
-
-#### Initiative 3: Platform Evolution
-- **Goal**: Evolve platform based on user feedback
-- **Target**: Continuous improvement based on metrics
-- **Focus**: User experience, content quality, feature additions
-
-#### Initiative 4: Content Maintenance
-- **Goal**: Keep content current with game updates
-- **Target**: Update content within 2 weeks of major game updates
-- **Focus**: Meta analysis, vehicle guides, map tactics
-
-### Long-Term Success Metrics (12 Months)
-- **Content Coverage**: 500+ content pages
-- **Word Count**: 500,000+ words of content
-- **User Base**: 10,000+ monthly active users
-- **User Engagement**: Average 5+ minutes per session
-- **Content Quality**: 90%+ content meets production standards
-- **Platform Performance**: < 2s average page load time
-- **Accessibility**: WCAG 2.1 AA compliant
-- **SEO**: Top 10 rankings for major War Thunder search queries
-
-### Future Considerations (12+ Months)
-
-#### Potential Advanced Features
-- User accounts and authentication
-- Community contributions (moderated)
-- Comments/discussion system
-- Predictive meta engine
-- Advanced analytics dashboard
-- API for third-party integrations
-- Mobile app (if needed)
-
-#### Platform Growth
-- Expand to additional languages (localization)
-- Community content moderation system
-- Advanced search with AI (semantic search)
-- Personalized content recommendations
-- User progress tracking with accounts
-- Community features (forums, discussions)
-
-### Long-Term Vision (2-3 Years)
-
-**Vision**: Become the definitive, authoritative War Thunder educational resource
-- **Complete Coverage**: Every vehicle, every map, every BR tier comprehensively covered
-- **Community-Driven**: Active community contributing and maintaining content
-- **Platform Leadership**: Recognized as the #1 War Thunder educational platform
-- **Sustainable Growth**: Self-sustaining platform with community support
-- **Content Authority**: Go-to source for War Thunder meta analysis and guides
+[To be expanded: 6-12 month vision, strategic initiatives, long-term goals.]
 
 ---
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.744995 -->
+> [LOCAL-STUB] Phase P3.0008 (lines 847-882) – No Cursor driver. Echoing original chunk for testing.
 
 
 # 10. PROGRESS LOG & PHASE HISTORY
@@ -7410,6 +4964,25 @@ END OF INITIAL SKELETON
 This document will be massively expanded by the automation system.
 Each enhancement phase will add detail, clarity, and depth to the sections above.
 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.782185 -->
+> [LOCAL-STUB] Phase P8.0009 (lines 960-972) – No Cursor driver. Echoing original chunk for testing.
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.732264 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.738601 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.745777 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.752527 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.759295 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.766613 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.773611 -->
+
+<!-- Enhanced by automation system (fake mode) at 2025-11-19T22:40:40.783481 -->
 
 ---
 

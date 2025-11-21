@@ -1,0 +1,275 @@
+{
+  "rhine": {
+    "name": "Advance to the Rhine",
+    "type": "Urban Ruin",
+    "size": "Small (1.2km)",
+    "meta": "Close Quarters / Heavy Tank Dominance",
+    "br_rec": "All BRs (Especially 6.7 & Top Tier)",
+    "image_query": "War Thunder Advance to the Rhine map tactical view",
+    "spawns": {
+      "north": {
+        "title": "NORTH SPAWN (The Park)",
+        "strategy": "The North Spawn offers direct access to the long fire lane on the East (Column 9). DO NOT rush the central monument directly; you will be cross-fired from the South debris.",
+        "routes": [
+          {
+            "name": "The A-Line Hook (West)",
+            "desc": "Fast tanks only. Rush A1-A2 immediately. Hug the map border. This flanks the enemy heavy tanks pushing the center.",
+            "risk": "High"
+          },
+          {
+            "name": "The Sniper Alley (East)",
+            "desc": "TDs and Heavy Tanks. Move to the destroyed tramway in Column 8. Lock down the long road. Do not cross the open park without smoke.",
+            "risk": "Medium"
+          }
+        ],
+        "traps": "The central park circle is a kill zone. Artillery and CAS spam land here. Avoid unless capping late game."
+      },
+      "south": {
+        "title": "SOUTH SPAWN (The Station)",
+        "strategy": "South has the advantage for C-point control. Rush the rubble piles at C4 immediately. These offer hull-down positions for MBTs.",
+        "routes": [
+          {
+            "name": "The C-Rush",
+            "desc": "Heavies/MBTs. Drive straight to C. Use the dead T-34 prop tank as cover. Angle your armor.",
+            "risk": "Medium"
+          },
+          {
+            "name": "The B-Line Ambush",
+            "desc": "Light Tanks. Drive into the bombed-out building at B4. You can shoot enemies in the side as they cross the main road.",
+            "risk": "High"
+          }
+        ]
+      }
+    },
+    "roles": [
+      {
+        "role": "Light Tanks",
+        "icon": "fa-bolt",
+        "desc": "Do not brawl. Your goal is A-Line flank or B4 ambush. Scout enemies crossing the park. Artillery the C point constantly."
+      },
+      {
+        "role": "Heavy Tanks",
+        "icon": "fa-shield-halved",
+        "desc": "You are the Anchor. Hold the C point rubble or the North Tramway. Sidescrape off the buildings. Do not push into the open park."
+      },
+      {
+        "role": "SPAA",
+        "icon": "fa-crosshairs",
+        "desc": "Stay in spawn protection or behind the tall buildings in Column 1. Helicopters usually pop up from the East River side."
+      },
+      {
+        "role": "CAS",
+        "icon": "fa-plane",
+        "desc": "Approach from the North-South axis (parallel to streets) to spot targets in alleys. Bomb the C point rubble piles; there is always a camper there."
+      }
+    ],
+    "timings": [
+      {
+        "time": "0:00 - 0:30",
+        "desc": "Rush Phase. Lights take A-flank. Heavies reach the first rubble pile."
+      },
+      {
+        "time": "1:00 - 3:00",
+        "desc": "The Brawl. C point is contested. Smoke shells are critical here to cross streets."
+      },
+      {
+        "time": "Mid-Game",
+        "desc": "The team that controls the A-flank usually wins by spawn camping the side."
+      }
+    ]
+  },
+  "poland": {
+    "name": "Poland (Fields of)",
+    "type": "Mixed (Urban Center / Open Fields)",
+    "size": "Large (2.5km)",
+    "meta": "Sniping & Flanking",
+    "br_rec": "Mid to Top Tier",
+    "image_query": "War Thunder Poland map strategy guide",
+    "spawns": {
+      "north": {
+        "title": "NORTH-EAST SPAWN (Windmill)",
+        "strategy": "You have the high ground advantage near the Windmill (C Point). Snipers should set up on the ridge lines overlooking the lake.",
+        "routes": [
+          {
+            "name": "The Windmill Ridge",
+            "desc": "Snipers/MBTs. Go to grid E7. You can see the entire town and the South spawn exit.",
+            "risk": "Medium"
+          },
+          {
+            "name": "The City Rush",
+            "desc": "Brawlers. Rush into the town church. It's CQC. Watch for crossfire from the lake.",
+            "risk": "High"
+          }
+        ]
+      },
+      "south": {
+        "title": "SOUTH-WEST SPAWN (Forest)",
+        "strategy": "You must cross open ground to reach the city. Smoke is essential. Alternatively, perform a wide flank through the far west forest.",
+        "routes": [
+          {
+            "name": "The Forest Flank (West)",
+            "desc": "Light Tanks. Go wide A-Line. Flank behind the snipers on the Northern ridge.",
+            "risk": "Low (Slow)"
+          },
+          {
+            "name": "The Castle Hull-Down",
+            "desc": "MBTs. Use the ridge near the castle ruins to snipe across the lake.",
+            "risk": "Medium"
+          }
+        ]
+      }
+    },
+    "roles": [
+      {
+        "role": "Snipers/TDs",
+        "icon": "fa-crosshairs",
+        "desc": "This is your map. Set up on the ridges outside town. Rangefinding is key. 1200m+ shots are common."
+      },
+      {
+        "role": "Mediums",
+        "icon": "fa-tank",
+        "desc": "Fight in the city or support the sniper line. If in city, clear the streets one by one."
+      },
+      {
+        "role": "Helicopters",
+        "icon": "fa-helicopter",
+        "desc": "Pop up over the lake. Use the trees on the shoreline to mask your approach. ATGMs are deadly here."
+      }
+    ],
+    "timings": [
+      {
+        "time": "0:00 - 1:00",
+        "desc": "Race to the ridges. First one hull-down wins the sniper duel."
+      },
+      {
+        "time": "Mid-Game",
+        "desc": "The team that wins the city usually pushes out to spawn camp the open fields."
+      }
+    ]
+  },
+  "sinai": {
+    "name": "Sands of Sinai",
+    "type": "Open Desert",
+    "size": "Large (3.0km)",
+    "meta": "Long Range / Thermal Abuse",
+    "br_rec": "High Tier (8.0+)",
+    "image_query": "War Thunder Sands of Sinai map tactics",
+    "spawns": {
+      "north": {
+        "title": "NORTH SPAWN (Rocks)",
+        "strategy": "The huge rock formation at A is the key. Control it, and you control the map. Do not drive in the open dunes.",
+        "routes": [
+          {
+            "name": "The A-Rock Fortress",
+            "desc": "Heavies/MBTs. Brawl inside the rock arches at A. It's safe from snipers.",
+            "risk": "High"
+          },
+          {
+            "name": "The East Ridge Sniper",
+            "desc": "Light Tanks/TDs. Climb the rocks on the far East. Spot the entire map.",
+            "risk": "High"
+          }
+        ]
+      },
+      "south": {
+        "title": "SOUTH SPAWN (Village)",
+        "strategy": "Use the dunes to hull-down. The village at C offers cover, but leaving it is dangerous.",
+        "routes": [
+          {
+            "name": "The Dune Sea",
+            "desc": "MBTs. Use gun depression to peek over dunes. Shoot and scoop.",
+            "risk": "Medium"
+          },
+          {
+            "name": "The C-Point Brawl",
+            "desc": "Brawlers. Fight in the village. Watch for snipers on the East Ridge.",
+            "risk": "High"
+          }
+        ]
+      }
+    },
+    "roles": [
+      {
+        "role": "Light Tanks",
+        "icon": "fa-bolt",
+        "desc": "Scouting is OP here. Sit on a ridge, scout targets for your team. Use thermal binoculars."
+      },
+      {
+        "role": "CAS",
+        "icon": "fa-plane",
+        "desc": "Open desert means tanks have nowhere to hide. Easy pickings. Watch for SAMs which also have clear sightlines."
+      }
+    ],
+    "timings": [
+      {
+        "time": "Early Game",
+        "desc": "Snipers duel from spawn to spawn (2km shots)."
+      },
+      {
+        "time": "Late Game",
+        "desc": "Light tanks flanking wide East usually decide the match."
+      }
+    ]
+  },
+  "karelia": {
+    "name": "Karelia",
+    "type": "Mixed Canyon",
+    "meta": "Brawling"
+  },
+  "berlin": {
+    "name": "Berlin",
+    "type": "Urban Ruin",
+    "meta": "Sniper/Brawl"
+  },
+  "normandy": {
+    "name": "Normandy",
+    "type": "Mixed Coastal",
+    "meta": "Flanking"
+  },
+  "mozdok": {
+    "name": "Mozdok",
+    "type": "Open Hilly",
+    "meta": "Long Range"
+  },
+  "fulda": {
+    "name": "Fulda Gap",
+    "type": "Mixed Valley",
+    "meta": "Top Tier MBT"
+  },
+  "maginot": {
+    "name": "Maginot Line",
+    "type": "Open Hilly",
+    "meta": "Hull-Down"
+  },
+  "tunisia": {
+    "name": "Tunisia",
+    "type": "Desert Urban",
+    "meta": "River Flank"
+  },
+  "vietnam": {
+    "name": "Vietnam",
+    "type": "Jungle/Swamp",
+    "meta": "Ambush"
+  },
+  "italy": {
+    "name": "Italy (Campania)",
+    "type": "Urban City",
+    "meta": "Fast Carts"
+  },
+  "alaska": {
+    "name": "Alaska",
+    "type": "Urban US",
+    "meta": "City Brawl"
+  },
+  "seversk": {
+    "name": "Seversk-13",
+    "type": "Urban/Hill",
+    "meta": "Mixed"
+  },
+  "sweden": {
+    "name": "Sweden",
+    "type": "Urban Modern",
+    "meta": "Reaction Time"
+  }
+}
+

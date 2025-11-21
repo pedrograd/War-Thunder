@@ -1,0 +1,540 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-void: #050505;
+    --bg-grid: #0a0a0a;
+    --bg-panel: rgba(20, 25, 35, 0.95);
+    --c-ground: #d4b483;
+    --c-air: #60a5fa;
+    --c-heli: #4ade80;
+    --c-naval: #94a3b8;
+    --c-meta: #a855f7;
+    --c-econ: #10b981;
+    --c-warn: #ef4444;
+    --c-gold: #f59e0b;
+    --font-stencil: 'Black Ops One', cursive;
+    --font-hud: 'Rajdhani', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    @apply border-slate-700;
+  }
+  
+  html {
+    @apply bg-background-void;
+  }
+  
+  body {
+    @apply bg-background-void text-text-primary;
+    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.75;
+    position: relative;
+    /* Enhanced tactical grid texture with subtle radial vignette */
+    background-image: 
+      radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%),
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-position: center, 0 0, 0 0;
+    overflow-x: hidden;
+  }
+  
+  /* Scrollbar styling (v10.0) */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bg-void);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 0;
+    border: 1px solid #0f172a;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--c-gold);
+  }
+  
+  /* Typographic System (v10.0) */
+  h1, h2 {
+    font-family: var(--font-stencil);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    @apply text-slate-200 font-semibold;
+  }
+  
+  h3, h4, .hud-font {
+    font-family: var(--font-hud);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    @apply text-slate-200 font-semibold;
+  }
+  
+  .code-font {
+    font-family: var(--font-code);
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+    line-height: 1.3;
+  }
+  
+  /* Eyebrow labels - small caps, wide tracking */
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.2em] uppercase;
+  }
+  
+  a {
+    @apply text-tactical-cyan hover:text-tactical-cyan/80 transition-colors;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .content-width {
+    @apply max-w-4xl mx-auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Consistent vertical rhythm */
+  .section-spacing {
+    @apply mb-12 md:mb-16;
+  }
+  
+  /* Enhanced glass panel effect with inner glow */
+  .glass-panel {
+    @apply bg-background-elevated/60 backdrop-blur-glass border border-slate-700/40 rounded-panel;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+  }
+  
+  /* Subtle gradient overlay on glass panels */
+  .glass-panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 242, 255, 0.2), transparent);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  
+  /* Neon glow effects */
+  .neon-orange {
+    text-shadow: 0 0 10px rgba(255, 156, 74, 0.5), 0 0 20px rgba(255, 156, 74, 0.3);
+  }
+  
+  .neon-cyan {
+    text-shadow: 0 0 10px rgba(59, 242, 255, 0.5), 0 0 20px rgba(59, 242, 255, 0.3);
+  }
+  
+  .neon-purple {
+    text-shadow: 0 0 10px rgba(199, 107, 255, 0.5), 0 0 20px rgba(199, 107, 255, 0.3);
+  }
+  
+  .neon-green {
+    text-shadow: 0 0 10px rgba(106, 242, 121, 0.5), 0 0 20px rgba(106, 242, 121, 0.3);
+  }
+  
+  /* Military stencil font effect */
+  .stencil-title {
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-stretch: condensed;
+  }
+  
+  /* Smooth micro-animations */
+  .transition-micro {
+    transition: all 150ms ease-in-out;
+  }
+  
+  .transition-smooth {
+    transition: all 200ms ease-in-out;
+  }
+  
+  /* Enhanced card hover effects with smooth transitions */
+  .card-hover {
+    @apply transition-all duration-smooth ease-out;
+    transform: translateY(0);
+  }
+  
+  .card-hover:hover {
+    @apply scale-[1.02] shadow-glass-lg;
+    transform: translateY(-2px);
+    border-color: rgba(59, 242, 255, 0.3);
+  }
+  
+  .card-hover:focus-visible {
+    @apply outline-none ring-2 ring-accent-academy ring-offset-2 ring-offset-background;
+  }
+  
+  /* Enhanced fade-in animation with stagger support */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out;
+  }
+  
+  /* Stagger animation for lists */
+  .stagger-item {
+    animation: fadeInUp 0.4s ease-out backwards;
+  }
+  
+  .stagger-item:nth-child(1) { animation-delay: 0.05s; }
+  .stagger-item:nth-child(2) { animation-delay: 0.1s; }
+  .stagger-item:nth-child(3) { animation-delay: 0.15s; }
+  .stagger-item:nth-child(4) { animation-delay: 0.2s; }
+  .stagger-item:nth-child(5) { animation-delay: 0.25s; }
+  .stagger-item:nth-child(6) { animation-delay: 0.3s; }
+  
+  /* Skip to main content link - Enhanced accessibility */
+  .skip-to-content {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50;
+    @apply px-4 py-2 bg-accent-primary text-white font-semibold rounded-button;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2 focus:ring-offset-background;
+    @apply transition-all duration-micro;
+  }
+  
+  .skip-to-content:focus {
+    @apply scale-105 shadow-neon-orange;
+  }
+  
+  /* Enhanced prose styles for markdown content - Improved readability */
+  .prose-tactical {
+    max-width: 100%;
+    @apply text-text-primary;
+  }
+  
+  .prose-tactical h1 {
+    @apply text-text-primary font-bold tracking-tight text-4xl mb-6 mt-8;
+    font-family: var(--font-stencil);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .prose-tactical h2 {
+    @apply text-text-primary font-semibold border-b border-slate-700/60 pb-3 mt-10 mb-5 text-3xl;
+    font-family: var(--font-stencil);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .prose-tactical h3 {
+    @apply text-text-primary font-semibold mt-8 mb-4 text-2xl;
+    font-family: var(--font-hud);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .prose-tactical h4 {
+    @apply text-text-primary font-semibold mt-6 mb-3 text-xl;
+    font-family: var(--font-hud);
+    letter-spacing: 0.05em;
+  }
+  
+  .prose-tactical p {
+    @apply text-text-primary leading-reading mb-5;
+    max-width: 75ch;
+  }
+  
+  .prose-tactical a {
+    @apply text-accent-academy hover:text-accent-academy/80 underline;
+    @apply transition-colors duration-micro;
+  }
+  
+  .prose-tactical a:focus-visible {
+    @apply outline-none ring-2 ring-accent-academy ring-offset-2 ring-offset-background rounded;
+  }
+  
+  .prose-tactical code {
+    @apply bg-background-elevated text-accent-academy px-1.5 py-0.5 rounded text-sm font-mono;
+    font-family: var(--font-code);
+  }
+  
+  .prose-tactical pre {
+    @apply bg-background-elevated border border-slate-700/60 rounded-card p-4 overflow-x-auto mb-5;
+    @apply shadow-glass;
+  }
+  
+  .prose-tactical pre code {
+    @apply bg-transparent text-text-primary p-0;
+  }
+  
+  .prose-tactical blockquote {
+    @apply border-l-4 border-accent-warning/50 bg-background-elevated/50 pl-5 py-3 italic text-text-secondary my-5;
+    @apply rounded-r-lg;
+  }
+  
+  .prose-tactical ul,
+  .prose-tactical ol {
+    @apply mb-5 ml-6 space-y-2;
+    max-width: 70ch;
+  }
+  
+  .prose-tactical li {
+    @apply text-text-primary leading-relaxed;
+  }
+  
+  .prose-tactical ul li {
+    @apply list-disc;
+  }
+  
+  .prose-tactical ol li {
+    @apply list-decimal;
+  }
+  
+  .prose-tactical table {
+    @apply w-full border-collapse border border-slate-700/60 my-6 rounded-lg overflow-hidden;
+    @apply shadow-glass;
+  }
+  
+  .prose-tactical th {
+    @apply bg-background-elevated border border-slate-700/60 px-4 py-3 text-left text-text-primary font-semibold;
+    font-family: var(--font-hud);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .prose-tactical td {
+    @apply border border-slate-700/60 px-4 py-3 text-text-primary;
+  }
+  
+  .prose-tactical tr:hover {
+    @apply bg-background-elevated/50;
+  }
+  
+  .prose-tactical hr {
+    @apply border-slate-700/60 my-10;
+    border-top-width: 1px;
+  }
+  
+  .prose-tactical img {
+    @apply rounded-card my-6 shadow-glass;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .prose-tactical strong {
+    @apply font-semibold text-text-primary;
+  }
+  
+  .prose-tactical em {
+    @apply italic;
+  }
+
+  /* --- COMPONENT: SIDEBAR (v10.0) --- */
+  .nav-group-title {
+    font-family: var(--font-code);
+    font-size: 0.65rem;
+    color: #64748b;
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.65rem 1.5rem;
+    color: #94a3b8;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    font-family: var(--font-hud);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    padding-left: 1.75rem;
+  }
+
+  .sidebar-link.active {
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), transparent);
+    color: var(--c-gold);
+    border-left-color: var(--c-gold);
+  }
+
+  /* Color Coded Active States */
+  .sidebar-link[data-type="ground"].active {
+    border-color: var(--c-ground);
+    color: var(--c-ground);
+    background: linear-gradient(90deg, rgba(212, 180, 131, 0.1), transparent);
+  }
+
+  .sidebar-link[data-type="air"].active {
+    border-color: var(--c-air);
+    color: var(--c-air);
+    background: linear-gradient(90deg, rgba(96, 165, 250, 0.1), transparent);
+  }
+
+  .sidebar-link[data-type="meta"].active {
+    border-color: var(--c-meta);
+    color: var(--c-meta);
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.1), transparent);
+  }
+
+  /* --- COMPONENT: TACTICAL CARDS (v10.0) --- */
+  .tac-card {
+    background: var(--bg-panel);
+    border: 1px solid #334155;
+    border-radius: 2px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .tac-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #334155;
+  }
+
+  .tac-card-ground::before {
+    background: var(--c-ground);
+  }
+
+  .tac-card-air::before {
+    background: var(--c-air);
+  }
+
+  .tac-card-meta::before {
+    background: var(--c-meta);
+  }
+
+  .tac-card-warn::before {
+    background: var(--c-warn);
+  }
+
+  /* --- COMPONENT: VISUAL CONTAINERS (v10.0) --- */
+  .infographic-box {
+    background: #0f172a;
+    border: 1px dashed #475569;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #64748b;
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    position: relative;
+    min-height: 200px;
+  }
+
+  .infographic-box i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+  }
+
+  .infographic-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 0.6rem;
+    background: #1e293b;
+    padding: 2px 6px;
+    color: #fff;
+  }
+
+  /* --- COMPONENT: SIMULATION BOX (v10.0) --- */
+  .sim-box {
+    background: #000;
+    border: 2px solid var(--c-gold);
+    padding: 1rem;
+    margin: 2rem 0;
+    font-family: var(--font-code);
+    color: var(--c-gold);
+    position: relative;
+  }
+
+  .sim-header {
+    position: absolute;
+    top: -12px;
+    left: 1rem;
+    background: #000;
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+  }
+
+  .sim-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+
+  /* --- COMPONENT: STAT BAR (v10.0) --- */
+  .stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    width: 80px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #94a3b8;
+    font-family: var(--font-hud);
+  }
+
+  .stat-track {
+    flex: 1;
+    height: 6px;
+    background: #1e293b;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .stat-fill {
+    height: 100%;
+    background: #fff;
+  }
+}
+

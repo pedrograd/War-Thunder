@@ -1,0 +1,21 @@
+[
+  {
+    "id": "fulda-gap",
+    "name": "Fulda Gap",
+    "overview": "Large open map with urban areas and long sightlines. Excellent for long-range engagements and flanking maneuvers.",
+    "spawnLayouts": ["North-South", "East-West", "Mixed"],
+    "strategies": ["Control high ground positions", "Use cover in urban sectors", "Flank through forest areas"],
+    "counters": ["Watch for snipers on hills", "Beware of CAS from air spawns", "Avoid open fields without cover"],
+    "image": "/images/maps/fulda-gap.jpg"
+  },
+  {
+    "id": "advance-to-the-rhine",
+    "name": "Advance to the Rhine",
+    "overview": "Urban combat map with tight streets and multiple capture points. Close-quarters combat focused.",
+    "spawnLayouts": ["City Center", "Outskirts", "Bridge Control"],
+    "strategies": ["Control key intersections", "Use buildings for cover", "Coordinate with team for flanks"],
+    "counters": ["Watch for ambushes in alleys", "Beware of rooftop positions", "Avoid main streets"],
+    "image": "/images/maps/advance-to-the-rhine.jpg"
+  }
+]
+

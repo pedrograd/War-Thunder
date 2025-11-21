@@ -1,0 +1,27 @@
+[
+  {
+    "id": "m4-sherman",
+    "name": "M4 Sherman",
+    "br": 3.7,
+    "role": "Medium Tank",
+    "nation": "USA",
+    "type": "tank",
+    "strengths": ["Good mobility", "Stabilizer at low speeds", "Versatile ammo selection"],
+    "weaknesses": ["Weak armor", "Large profile", "Poor reverse speed"],
+    "metaNotes": ["Excellent for flanking maneuvers. Use stabilizer advantage in close combat."],
+    "img": "/images/vehicles/m4-sherman.jpg"
+  },
+  {
+    "id": "tiger-h1",
+    "name": "Tiger H1",
+    "br": 5.3,
+    "role": "Heavy Tank",
+    "nation": "Germany",
+    "type": "tank",
+    "strengths": ["Excellent gun", "Strong frontal armor", "Good penetration"],
+    "weaknesses": ["Weak side armor", "Slow reload", "Poor mobility"],
+    "metaNotes": ["Angle armor at 45 degrees. Avoid exposing sides. Use range advantage."],
+    "img": "/images/vehicles/tiger-h1.jpg"
+  }
+]
+

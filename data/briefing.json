@@ -1,0 +1,108 @@
+{
+  "metaHighlights": [
+    {
+      "title": "Spearhead Update (Nov 2025)",
+      "desc": "Fox-3 missiles standardized across Top Tier. APS active on T-90M and Leo 2A8.",
+      "type": "update"
+    },
+    {
+      "title": "Economy Shift",
+      "desc": "RP cap removed for matches lasting >15 mins. Assist rewards increased by 15%.",
+      "type": "economy"
+    },
+    {
+      "title": "Balance Watch",
+      "desc": "France 9.7 Ground is currently dominating win-rates (62%).",
+      "type": "balance"
+    }
+  ],
+  "dailyBriefing": [
+    {
+      "icon": "🎯",
+      "title": "Daily Task Recommendation",
+      "content": "\"Anti-Mech\" (Kill 10 Ground Units in Air RB) is currently the fastest BP task using the A-10C."
+    },
+    {
+      "icon": "⚠️",
+      "title": "Bug Warning",
+      "content": "Ghost shells reported frequently on Volokolamsk. Avoid B-point brawl areas."
+    },
+    {
+      "icon": "💰",
+      "title": "Market Watch",
+      "content": "Object 292 prices spiking (+15%) due to new HE mechanics."
+    }
+  ],
+  "winRates": {
+    "labels": ["Sweden", "Germany", "USSR", "France", "USA", "Japan"],
+    "data": [62, 58, 55, 53, 48, 47],
+    "colors": ["#f59e0b", "#475569", "#ef4444", "#3b82f6", "#22c55e", "#a855f7"]
+  },
+  "nations": {
+    "usa": {
+      "name": "USA",
+      "style": "Jack of All Trades, CAS Superiority",
+      "topTier": "M1A2 SEPv4 / F-15EX",
+      "grindPremium": "M1A1 Click-Bait (Rank VII) - Good mobility, weak hull.",
+      "bestLineup": "11.3 (M1A1 AIM, M1A1 HC, AH-64D, F-111C)"
+    },
+    "germany": {
+      "name": "Germany",
+      "style": "Sniping, High Velocity Guns",
+      "topTier": "Leopard 2A8 / Eurofighter",
+      "grindPremium": "Leopard 2A4M CAN (Rank VII) - Excellent armor package.",
+      "bestLineup": "6.7 (Tiger II (H), Panther II, Jagdtiger)"
+    },
+    "ussr": {
+      "name": "USSR",
+      "style": "Brawling, Low Profile, Bias Armor",
+      "topTier": "T-90M (2025) / Su-35S",
+      "grindPremium": "T-80UD - Strong turret, poor reverse.",
+      "bestLineup": "8.7 (T-55AM-1, BMP-2, Object 906)"
+    },
+    "sweden": {
+      "name": "Sweden",
+      "style": "Hull-down Masters, High Repair Cost",
+      "topTier": "Strv 122B+ / Gripen C",
+      "grindPremium": "CV90105 - Glass cannon, incredible mobility.",
+      "bestLineup": "11.7 (Strv 122B+, Strv 122B, CV90120)"
+    }
+  },
+  "predictions": [
+    {
+      "name": "F/A-18C Hornet",
+      "probability": 95,
+      "eta": "Dec 2025 (Winter Update)"
+    },
+    {
+      "name": "Rank IX Ground",
+      "probability": 60,
+      "eta": "Q1 2026"
+    },
+    {
+      "name": "Poland Map Rework",
+      "probability": 85,
+      "eta": "Next Major Patch"
+    },
+    {
+      "name": "Submarines (Full Mode)",
+      "probability": 20,
+      "eta": "Unlikely 2026"
+    }
+  ],
+  "roadmap": [
+    {
+      "period": "December 2025",
+      "description": "Winter Update. Focus on Rank IX Aviation (F/A-18, Rafale)."
+    },
+    {
+      "period": "March 2026",
+      "description": "First Major Patch of '26. Likely Graphics engine update (Ray Tracing 2.0)."
+    },
+    {
+      "period": "May 2026",
+      "description": "WW2 Content Refresh. New models for legacy Panzers and Shermans."
+    }
+  ]
+}
+
