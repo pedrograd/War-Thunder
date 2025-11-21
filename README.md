@@ -160,54 +160,45 @@ See `prd.md` for complete Product Requirements Document with detailed specificat
 - **Layout**: Max 1200px container, 65ch content width
 - **Responsive**: Mobile-first, breakpoints at 640px, 768px, 1024px
 
-## 🚀 Deployment (GitHub + Vercel)
+## 🚀 Deploy to Vercel (Free & Easy - Get Shareable URL)
 
-This project is ready for deployment on Vercel (recommended) or any other platform that supports Next.js.
+**Your code is already on GitHub!** Follow these simple steps to get a public URL you can share with friends:
 
-### Step 1: Initialize Git (if not already done)
+### Quick Deploy (2 minutes)
 
-```bash
-git init
-git add .
-git commit -m "Initial War Thunder Master Academy"
-```
+1. **Go to Vercel**: Open [https://vercel.com](https://vercel.com) in your browser
+2. **Sign in**: Click "Sign Up" or "Log In" and use your **GitHub account** (same account as your repo)
+3. **New Project**: Click **"Add New..."** → **"Project"** (or "New Project" button)
+4. **Import Repository**: 
+   - Find and select: **`pedrograd/War-Thunder`**
+   - Or search for "War-Thunder" in the list
+5. **Configure** (Vercel auto-detects Next.js, but verify):
+   - **Framework Preset**: `Next.js` ✅
+   - **Build Command**: `npm run build` ✅
+   - **Output Directory**: `.next` ✅ (leave default)
+   - **Install Command**: `npm install` ✅ (leave default)
+6. **Deploy**: Click the big **"Deploy"** button
+7. **Wait**: Takes about 1-2 minutes for the build to complete
 
-### Step 2: Create GitHub Repository
+### 🎉 Get Your Shareable URL
 
-1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it something like `war-thunder-master-academy`
-3. **Do not** initialize with README, .gitignore, or license (we already have these)
+After deployment succeeds, Vercel will show you:
 
-### Step 3: Connect and Push to GitHub
+- **Production URL**: `https://war-thunder.vercel.app` (or similar)
+  - **This is your public website URL!** 
+  - Share this link with anyone - it works immediately
+  - No login required for visitors
 
-```bash
-# Add remote (replace YOUR_USERNAME and REPO_NAME)
-git remote add origin https://github.com/YOUR_USERNAME/REPO_NAME.git
+### Auto-Deployments
 
-# Push to GitHub
-git branch -M main
-git push -u origin main
-```
+- Every time you push code to the `main` branch on GitHub, Vercel automatically redeploys your site
+- You'll get a new deployment URL for each push (but the production URL stays the same)
 
-### Step 4: Deploy to Vercel
+### Current Status
 
-1. Go to [Vercel](https://vercel.com) and sign in with your GitHub account
-2. Click **"New Project"** or **"Add New..."** → **"Project"**
-3. Import your GitHub repository (the one you just created)
-4. Vercel will auto-detect Next.js settings:
-   - **Framework Preset**: Next.js
-   - **Build Command**: `npm run build` (default)
-   - **Output Directory**: `.next` (default)
-   - **Install Command**: `npm install` (default)
-5. Click **"Deploy"**
-
-### Step 5: Access Your Site
-
-After deployment completes, Vercel will provide you with:
-- **Production URL**: `https://your-repo-name.vercel.app`
-- **Deployment URL**: Each deployment gets its own URL
-
-You can share the production URL with friends or use it as your main site!
+✅ **Code is on GitHub**: `https://github.com/pedrograd/War-Thunder`  
+✅ **Build verified**: `npm run build` passes successfully  
+✅ **Ready to deploy**: Just follow the steps above!
 
 ### Environment Variables
 
